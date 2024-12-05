@@ -1,0 +1,9 @@
+{
+  "/page": "app/page.js",
+  "/about-us/page": "app/about-us/page.js",
+  "/packages/page": "app/packages/page.js",
+  "/contact-us/page": "app/contact-us/page.js",
+  "/payment-data/page": "app/payment-data/page.js",
+  "/data-collection/page": "app/data-collection/page.js",
+  "/refund-policy/page": "app/refund-policy/page.js"
+}
