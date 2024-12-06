@@ -67,7 +67,7 @@ function Plans() {
               width: "100%",
               height: "100%",
               backgroundImage: `radial-gradient(50% 50% at 50% 50%,${alpha(
-                theme.palette.secondary.main,
+                theme.palette.primary.main,
                 0.3
               )} 0,transparent 100%)`,
               top: 0,
