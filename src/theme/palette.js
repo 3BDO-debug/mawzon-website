@@ -2,7 +2,7 @@ import { alpha } from "@mui/material/styles";
 
 // ----------------------------------------------------------------------
 
-const SECONDARY = {
+const PRIMARY = {
   lighter: "#ef6885",
   light: "#e94b6c",
   main: "#E43554", // Main secondary color
@@ -11,7 +11,7 @@ const SECONDARY = {
   contrastText: "#ffffff", // Text color for contrast
 };
 
-const PRIMARY = {
+const SECONDARY = {
   main: "#4fab32", // Main secondary color
   contrastText: "#131515", // Text color for contrast
 };
