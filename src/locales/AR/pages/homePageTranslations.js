@@ -34,7 +34,7 @@ const homePageTranslations = {
   },
   services: {
     title: "خدماتنا",
-    subtitle: "إيه اللي بنقدمه !",
+    subtitle: "ما نقدمه لكي  تحققي هدفك ",
     servicesData: {
       1: {
         name: "مراجعة تحاليلك و حالتك الصحية",
@@ -66,9 +66,9 @@ const homePageTranslations = {
     },
   },
   reviews: {
-    title: "آراء العملاء",
-    subtitle: "إيه رأي الناس",
-    subtitle2: "فينا؟",
+    title: "تجارب عملائنا",
+    subtitle: "قصص نجاح",
+    subtitle2: "وتغيير حقيقية",
     reviewsData: {
       1: {
         name: "جهاد محمود شحاتة",
@@ -148,7 +148,7 @@ const homePageTranslations = {
     },
   },
   hook: {
-    title: "أكتر من 5000 بنت قدرت تغير وزنها ومقاسات جسمها مع د . شروق على",
+    title: "اكثر من 5000 بنت قدرت توصل لهدفها وتستعيد ثقتها بنفسها مع د/ شروق علي",
   },
 };
 

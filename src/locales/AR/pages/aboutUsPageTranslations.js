@@ -1,5 +1,6 @@
 const aboutUsPageTranslations = {
-  thumbnail: "من الرؤية إلى الواقع: القصة الملهمة وراء موزون للدكتورة شروق علي",
+  thumbnail:
+    "من الفكره الي الواقع: رحلة التحدي والإنجاز وراء موزون مع د. شروق علي",
   ourStory: {
     title: "قصتنا",
     subtitle: "كيف بدأت الرحلة",
@@ -41,7 +42,7 @@ const aboutUsPageTranslations = {
   },
   coreValues: {
     title: "قِيَمنا",
-    subtitle: "القيم الجوهرية",
+    subtitle: "مبادئنا التي نبني عليها نجاحنا",
     values: {
       customerSatisfaction: {
         title: "رضا العملاء",
