@@ -12,7 +12,7 @@ const PRIMARY = {
 };
 
 const SECONDARY = {
-  main: "#9aca53", // Main secondary color
+  main: "#4fab32", // Main secondary color
   contrastText: "#131515", // Text color for contrast
 };
 
