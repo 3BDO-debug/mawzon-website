@@ -71,7 +71,7 @@ function AboutUs() {
                 </Typography>
                 <Typography
                   sx={{
-                    background: `linear-gradient(to right, ${theme.palette.primary.lighter}, ${theme.palette.primary.main})`,
+                    background: `linear-gradient(to right, ${theme.palette.primary.light}, ${theme.palette.primary.main})`,
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
                     color: "transparent",
