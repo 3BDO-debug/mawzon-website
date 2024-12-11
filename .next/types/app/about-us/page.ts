@@ -1,4 +1,4 @@
-// File: /Users/abdelrahmanali/Documents/Abdelrahman/Based on Tech/mawzon/mawzon-website/src/app/about-us/page.js
+// File: C:\Projects\Mawzon\Website\mawzon\src\app\about-us\page.js
 import * as entry from '../../../../src/app/about-us/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

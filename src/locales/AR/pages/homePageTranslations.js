@@ -65,7 +65,7 @@ const homePageTranslations = {
   },
   services: {
     title: "خدماتنا",
-    subtitle: "إيه اللي بنقدمه !",
+    subtitle: "ما نقدمه لكي  تحققي هدفك ",
     servicesData: {
       1: {
         name: "مراجعة تحاليلك و حالتك الصحية",
@@ -97,9 +97,9 @@ const homePageTranslations = {
     },
   },
   reviews: {
-    title: "آراء العملاء",
-    subtitle: "إيه رأي الناس",
-    subtitle2: "فينا؟",
+    title: "تجارب عملائنا",
+    subtitle: "قصص نجاح وتغيير ",
+    subtitle2: "! حقيقية",
     reviewsData: {
       1: {
         name: "جهاد محمود شحاتة",
