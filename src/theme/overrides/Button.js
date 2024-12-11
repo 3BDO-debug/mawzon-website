@@ -23,8 +23,8 @@ export default function Button(theme) {
           boxShadow: theme.customShadows.z8,
         },
         containedPrimary: {
-          boxShadow: theme.customShadows.secondary,
-          backgroundColor: theme.palette.secondary.main,
+          boxShadow: theme.customShadows.primary,
+          backgroundColor: theme.palette.primary.main,
         },
         containedSecondary: {
           boxShadow: theme.customShadows.secondary,
@@ -54,7 +54,7 @@ export default function Button(theme) {
           color: theme.palette.text.primary,
           borderColor:
             themeMode.mode === "light"
-              ? theme.palette.secondary.main
+              ? theme.palette.primary.main
               : theme.palette.grey[600],
         },
         textInherit: {
