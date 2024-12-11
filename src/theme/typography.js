@@ -2,7 +2,7 @@ import { pxToRem, responsiveFontSizes } from "../utils/getFontValue";
 
 // ----------------------------------------------------------------------
 
-const FONT_PRIMARY = "Public Sans, GeistVF, sans-serif";
+const FONT_PRIMARY = "Public Sans, Cairo, sans-serif";
 
 const typography = {
   fontFamily: FONT_PRIMARY,

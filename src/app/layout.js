@@ -67,7 +67,16 @@ export default function RootLayout({ children }) {
         content="Transform your eating habits and lifestyle with Mawzon, led by Dr. Shrouk Ali, a clinical nutritionist and health coach. Personalized plans, expert guidance, and tailored solutions await you. Start your journey to a healthier you today."
       />
       <meta property="twitter:image" content="<URL_TO_IMAGE>" />
-      
+      <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <AppRouterCacheProvider>
           <RecoiledTheme>
