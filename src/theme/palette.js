@@ -4,7 +4,7 @@ import { alpha } from "@mui/material/styles";
 
 const PRIMARY = {
   main: "#4fab32", // Main secondary color
-  contrastText: "#131515", // Text color for contrast
+  contrastText: "#131515", // Text color for contrast--
 };
 
 const SECONDARY = {
