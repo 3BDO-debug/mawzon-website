@@ -22,27 +22,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/packages/page.js"
-    ],
-    "/contact-us/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/contact-us/page.css",
-      "static/chunks/app/contact-us/page.js"
-    ],
-    "/data-collection/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/data-collection/page.js"
-    ],
-    "/payment-data/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/payment-data/page.js"
-    ],
-    "/refund-policy/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/refund-policy/page.js"
     ]
   }
 }

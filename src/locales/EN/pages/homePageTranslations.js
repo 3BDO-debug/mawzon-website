@@ -11,6 +11,38 @@ const homePageTranslations = {
       viewPackages: "View Packages",
       contactUs: "Contact Us",
     },
+    transformations: {
+      1: {
+        name: "Zainab",
+        story:
+          "She lost 20 kg in 8 months and was suffering from spine problems that prevented her from exercising. She did physical therapy sessions throughout the follow-up period. That’s why she lost weight only through the diet plan, and her back issues improved by 95% after the follow-up.",
+      },
+      2: {
+        name: "Mawda",
+        story:
+          "She gained 20 kg and was suffering from a stomach infection, acid reflux, and had no appetite for food. After following the plan, her stomach issues improved, and her appetite became very good. Her skin and hair also got better, according to her, and her weight reached 63 kg. She managed to maintain this weight after it had been 43 kg.",
+      },
+      3: {
+        name: "Basmalah",
+        story:
+          "A 13-year-old girl who gained 7 kg and was suffering from iron deficiency, vitamin deficiencies, poor digestion, lack of focus, and a very weak appetite. After a short period of follow-up, her weight increased from 31 kg to 38 kg. She looked better, her clothes fit properly, her appetite improved, and her health significantly improved. She is still continuing with us until she reaches her goal.",
+      },
+      4: {
+        name: "Reham",
+        story:
+          "She gained 16 kg after having a very weak appetite. With the follow-up, she was able to improve her appetite, and her weight increased from 50 kg to 66 kg.",
+      },
+      5: {
+        name: "Elham",
+        story:
+          "She gained 10 kg and was suffering from colon problems, a stomach infection, functional indigestion, and chronic constipation. After following the plan, her health and appetite improved greatly, and her weight increased from 50 kg to 60 kg.",
+      },
+      6: {
+        name: "Doaa",
+        story:
+          "She lost 17 kg and was suffering from high cholesterol, triglycerides, fatty liver, and insulin resistance. After following the plan, her health and energy improved significantly, and her body shape and measurements became perfect. She lost weight from 83 kg to 66 kg with great flexibility and without any deprivation in the diet plan.",
+      },
+    },
   },
   aboutUsHook:
     " Ready to Experience the Difference? Join Us on a Journey to Optimal Health, Guided by Unparalleled Excellence.",

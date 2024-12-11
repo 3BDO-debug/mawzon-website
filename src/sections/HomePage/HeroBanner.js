@@ -24,7 +24,6 @@ import tornHole from "@/assets/torn-hole.png";
 import useLocales from "@/hooks/useLocales";
 import userIpRegionAtom from "@/recoil/atoms/userIpRegionAtom";
 import { userIpRegionFetcher } from "@/__apis__/userIpRegion";
-
 // -----------------------------------------------------------------------------------
 
 function HeroBanner() {
@@ -52,19 +51,84 @@ function HeroBanner() {
   }, []);
 
   const [anchorEl, setAnchorEl] = useState(null);
-  const [popoverImage, setPopoverImage] = useState(null);
+  const [popoverContent, setPopoverContent] = useState(null);
 
-  const handlePopoverOpen = (event, image) => {
+  const handlePopoverOpen = (event, transformation) => {
     setAnchorEl(event.currentTarget);
-    setPopoverImage(image);
+    setPopoverContent(transformation);
   };
 
   const handlePopoverClose = () => {
     setAnchorEl(null);
-    setPopoverImage(null);
+    setPopoverContent(null);
   };
 
   const open = Boolean(anchorEl);
+
+  //-----------------------------------
+
+  const transformations = [
+    {
+      before: "/transformations/zeinab-before.jpeg",
+      after: "/transformations/zeinab-after.jpeg",
+      story: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.1.story"
+      ),
+      name: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.1.name"
+      ),
+    },
+    {
+      before: "/transformations/mawada-before.jpeg",
+      after: "/transformations/mawada-after.jpeg",
+      story: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.2.story"
+      ),
+      name: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.2.name"
+      ),
+    },
+    {
+      before: "/transformations/basma-before.jpeg",
+      after: "/transformations/basma-after.jpeg",
+      story: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.3.story"
+      ),
+      name: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.3.name"
+      ),
+    },
+    {
+      before: "/transformations/reham-before.jpeg",
+      after: "/transformations/reham-after.jpeg",
+      story: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.4.story"
+      ),
+      name: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.4.name"
+      ),
+    },
+    {
+      before: "/transformations/elham-before.jpeg",
+      after: "/transformations/elham-after.jpeg",
+      story: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.5.story"
+      ),
+      name: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.5.name"
+      ),
+    },
+    {
+      before: "/transformations/doa-before.jpeg",
+      after: "/transformations/doa-after.jpeg",
+      story: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.6.story"
+      ),
+      name: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.6.name"
+      ),
+    },
+  ];
 
   return (
     <Box sx={{ py: 6, position: "relative" }}>
@@ -129,8 +193,8 @@ function HeroBanner() {
                 alt="torn hole"
                 objectFit="cover"
                 layout="fill"
-                style={{ zIndex: 12 }}
               />
+
               <Stack
                 direction="row"
                 flexWrap="wrap"
@@ -141,42 +205,24 @@ function HeroBanner() {
                   backgroundColor:
                     themeMode.mode === "light" ? "grey.900" : "grey.100",
                   justifyContent: "center",
-                  maxHeight: {
-                    xs: 500,
-                    md: 350,
-                  },
+                  maxHeight: { xs: 500, md: 350 },
                   clipPath: "circle(35% at 50% 50%)",
                   left: "-9%",
-                  top: {
-                    xs: "10%",
-                    md: "12%",
-                  },
+                  top: { xs: "10%", md: "12%" },
                   zIndex: 1,
                   transform: "rotate(8deg)",
                 }}
               >
-                {/* {Array.from({ length: 5 }).map((_, index) => (
-                  <Paper
-                    elevation={24}
-                    key={index}
-                    sx={{
-                      width: 140,
-                      height: 140,
-                      borderRadius: 2,
-                      objectFit: "cover",
-                      cursor: "pointer",
-                      transition: "all 0.7s ease-in-out",
-                      "&:hover": {
-                        scale: 1.1,
-                      },
+                {transformations.map((transformation, index) => (
+                  <motion.div
+                    drag
+                    dragConstraints={{
+                      left: -100,
+                      top: -100,
+                      right: 100,
+                      bottom: 100,
                     }}
-                    component="img"
-                    src={`/transformations/pic${index + 1}.jpg`}
-                  />
-                ))} */}
-                {Array.from({ length: 5 }).map((_, index) => {
-                  const imageSrc = `/transformations/pic${index + 1}.jpg`;
-                  return (
+                  >
                     <Paper
                       elevation={24}
                       key={index}
@@ -192,12 +238,18 @@ function HeroBanner() {
                         },
                       }}
                       component="img"
-                      src={imageSrc}
-                      onMouseEnter={(e) => handlePopoverOpen(e, imageSrc)}
-                      onMouseLeave={handlePopoverClose}
+                      src={transformation.after}
+                      alt={`${transformation.name} - After`}
+                      onMouseEnter={(e) => handlePopoverOpen(e, transformation)}
+                      onMouseLeave={(e) => {
+                        const relatedTarget = e.relatedTarget;
+                        if (!relatedTarget) {
+                          handlePopoverClose();
+                        }
+                      }}
                     />
-                  );
-                })}
+                  </motion.div>
+                ))}
               </Stack>
               <Popover
                 open={open}
@@ -214,19 +266,49 @@ function HeroBanner() {
                 PaperProps={{
                   sx: { p: 1, borderRadius: 2 },
                 }}
+                disableRestoreFocus
               >
-                {popoverImage && (
-                  <Box
-                    component="img"
-                    src={popoverImage}
-                    alt="Popover Image"
-                    sx={{
-                      width: 200,
-                      height: 200,
-                      objectFit: "cover",
-                      borderRadius: 2,
-                    }}
-                  />
+                {popoverContent && (
+                  <Box sx={{ textAlign: "center", maxWidth: 430 }}>
+                    <Stack
+                      direction="row"
+                      gap={3}
+                      sx={{ display: "flex", justifyContent: "center" }}
+                    >
+                      <Box
+                        component="img"
+                        src={popoverContent.before}
+                        alt={`${popoverContent.name} - Before`}
+                        sx={{
+                          width: 200,
+                          height: "auto",
+                          maxHeight: 280,
+                          objectFit: "cover",
+                          borderRadius: 2,
+                          mb: 1,
+                        }}
+                      />
+                      <Box
+                        component="img"
+                        src={popoverContent.after}
+                        alt={`${popoverContent.name} - After`}
+                        sx={{
+                          width: 200,
+                          height: "auto",
+                          maxHeight: 280,
+                          objectFit: "cover",
+                          borderRadius: 2,
+                          mb: 1,
+                        }}
+                      />
+                    </Stack>
+                    <Typography variant="h6" sx={{ color: "primary.main" }}>
+                      {popoverContent.name}
+                    </Typography>
+                    <Typography variant="body2">
+                      {popoverContent.story}
+                    </Typography>
+                  </Box>
                 )}
               </Popover>
             </Box>
