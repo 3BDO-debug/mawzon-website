@@ -1,7 +1,7 @@
 const contactUsPageTranslations = {
   contactUsForm: {
     title: "تواصلي معنا",
-    subtitle: "جاهزة تبدأي رحلتك معنا وتحققي أهدافك",
+    subtitle: "هل أنتي جاهزة للبدء؟",
     hook: "فريقنا هنا علشان يساعدك في كل خطوة، ويديكِ الدعم الشخصي والنصائح المتخصصة علشان تحققي أهدافكِ بثقة.",
     fields: {
       firstName: "الاسم الاول",

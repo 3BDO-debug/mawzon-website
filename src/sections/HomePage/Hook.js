@@ -78,7 +78,7 @@ function Hook() {
                 <Grid item md={2}>
                   <Stack gap={2}>
                     <Avatar
-                      src="transformations/pic1.jpg"
+                      src="transformations/1.jpeg"
                       sx={{
                         width: 150,
                         height: 150,
@@ -123,31 +123,8 @@ function Hook() {
                 </Grid>
                 <Grid item md={4}>
                   <Box sx={{ position: "relative" }}>
-                    {/* <Box
-                      sx={{
-                        position: "absolute",
-                        zIndex: 10,
-                        top: "5%",
-                        left: "5%",
-                      }}
-                    >
-                      <Paper
-                        elevation={12}
-                        sx={{
-                          backgroundColor: "background.neutral",
-                          borderRadius: 3,
-                        }}
-                      >
-                        <IconButton color="grey.800">
-                          <Iconify
-                            sx={{ width: 35, height: 35 }}
-                            icon="material-symbols:add"
-                          />
-                        </IconButton>
-                      </Paper>
-                    </Box> */}
                     <Avatar
-                      src="transformations/pic2.jpg"
+                      src="transformations/2.jpeg"
                       sx={{
                         width: 300,
                         height: 300,
@@ -177,7 +154,7 @@ function Hook() {
                       />
                     </Avatar>
                     <Avatar
-                      src="transformations/pic3.jpg"
+                      src="transformations/3.jpeg"
                       sx={{
                         height: 150,
                         width: 150,
@@ -206,7 +183,7 @@ function Hook() {
                 </Grid>
                 <Grid item md={4}>
                   <Avatar
-                    src="transformations/pic4.jpg"
+                    src="transformations/4.jpeg"
                     sx={{
                       width: 300,
                       height: 300,
