@@ -8,7 +8,7 @@ const plans = {
   plan1: {
     title: "ECO Plan",
     planDescription:
-      "Get started with our Eco plan, covering all the essentials: personalized nutrition, tailored workouts, and ongoing support to help you achieve your goals.",
+      "Get started with our Eco plan, covering all the essentials: personalized nutrition and ongoing support to help you achieve your goals.",
     featuresList: {
       1: "A review of your health condition based on a set of medical tests.",
       2: "A comprehensive diet plan tailored to your body type, health condition, daily routine, and food preferences.",
@@ -25,7 +25,7 @@ const plans = {
   plan2: {
     title: "SILVER Plan",
     planDescription:
-      "Upgrade to our Silver plan with monthly workout updates based on your progress.",
+      "Switch to our Silver Plan with a customized workout program tailored specifically for you, updated monthly based on your progress.",
     featuresList: {
       1: "A review of your health condition based on a set of medical tests.",
       2: "A comprehensive diet plan tailored to your body type, health condition, daily routine, and food preferences.",

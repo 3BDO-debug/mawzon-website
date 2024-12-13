@@ -10,7 +10,7 @@ const PRIMARY = {
 const SECONDARY = {
   lighter: "#ef6885",
   light: "#e94b6c",
-  main: "#E43554", // Main secondary color
+  main: "#e43554", // Main secondary color
   dark: "#d43053", // Darker shade of the secondary color--
   darker: "#be2b4f",
   contrastText: "#ffffff", // Text color for contrast

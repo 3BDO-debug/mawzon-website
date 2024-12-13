@@ -13,6 +13,7 @@ import {
   dataCollectionPageTranslations,
   paymentDataPageTranslations,
   refundPolicyPageTranslations,
+  followUpPolicyPageTranslations,
 } from "./pages";
 
 // ----------------------------------------------------------------------
@@ -25,6 +26,7 @@ const ar = {
     dataCollectionPageTranslations,
     paymentDataPageTranslations,
     refundPolicyPageTranslations,
+    followUpPolicyPageTranslations,
   },
   componentsTranslations: {
     headerTranslations,

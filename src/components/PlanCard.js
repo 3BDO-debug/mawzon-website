@@ -81,7 +81,8 @@ function PlanCard({
                   <Iconify
                     icon={
                       (type !== "golden" && index === 4) ||
-                      (type === "eco" && index === 8)
+                      (type === "eco" && index === 8) ||
+                      (type === "eco" && index === 2)
                         ? "ic:round-close"
                         : "material-symbols:check"
                     }
@@ -90,7 +91,8 @@ function PlanCard({
                       height: 25,
                       color:
                         (type !== "golden" && index === 4) ||
-                        (type === "eco" && index === 8)
+                        (type === "eco" && index === 8) ||
+                        (type === "eco" && index === 2)
                           ? "red"
                           : "green",
                     }}

@@ -1,6 +1,7 @@
 {
   "/page": "app/page.js",
-  "/packages/page": "app/packages/page.js",
   "/about-us/page": "app/about-us/page.js",
-  "/contact-us/page": "app/contact-us/page.js"
+  "/refund-policy/page": "app/refund-policy/page.js",
+  "/contact-us/page": "app/contact-us/page.js",
+  "/follow-up-policy/page": "app/follow-up-policy/page.js"
 }

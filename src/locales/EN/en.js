@@ -13,6 +13,7 @@ import {
   dataCollectionPageTranslations,
   paymentDataPageTranslations,
   refundPolicyPageTranslations,
+  followUpPolicyPageTranslations,
 } from "./pages";
 
 // ----------------------------------------------------------------------
@@ -25,6 +26,7 @@ const en = {
     dataCollectionPageTranslations,
     paymentDataPageTranslations,
     refundPolicyPageTranslations,
+    followUpPolicyPageTranslations,
   },
   componentsTranslations: {
     headerTranslations,

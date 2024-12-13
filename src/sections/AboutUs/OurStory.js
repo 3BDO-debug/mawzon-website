@@ -7,24 +7,14 @@ import Slider from "react-slick";
 // @Mui
 import {
   Box,
-  Container,
   Grid,
   Stack,
   Typography,
   useMediaQuery,
   IconButton,
   Paper,
-  Avatar,
 } from "@mui/material";
 import Image from "next/image";
-import {
-  Timeline,
-  TimelineConnector,
-  TimelineContent,
-  TimelineDot,
-  TimelineItem,
-  TimelineSeparator,
-} from "@mui/lab";
 // assets
 import cer2019 from "../../../public/certificates/2019.jpg";
 import cer2021 from "../../../public/certificates/early-2021.jpg";
@@ -240,7 +230,7 @@ function OurStory() {
           <Stack direction="row" justifyContent="center">
             <Typography variant="overline">
               {translate(
-                "pagesTranslations.homePageTranslations.reviews.title"
+                "pagesTranslations.aboutUsPageTranslations.ourStory.title"
               )}
             </Typography>
           </Stack>
@@ -249,19 +239,10 @@ function OurStory() {
           <Typography
             variant="h2"
             align="center"
-            sx={{ color: "primary.main" }}
+            sx={{ color: "primary.main", mt: 2 }}
           >
             {translate(
-              "pagesTranslations.homePageTranslations.reviews.subtitle"
-            )}
-          </Typography>
-          <Typography
-            variant="h2"
-            align="center"
-            sx={{ color: "primary.main" }}
-          >
-            {translate(
-              "pagesTranslations.homePageTranslations.reviews.subtitle2"
+              "pagesTranslations.aboutUsPageTranslations.ourStory.subtitle"
             )}
           </Typography>
         </Grid>

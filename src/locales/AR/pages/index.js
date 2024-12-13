@@ -4,3 +4,4 @@ export { default as contactUsPageTranslations } from "./contactUsPageTranslation
 export { default as dataCollectionPageTranslations } from "./dataCollectionPageTranslations";
 export { default as paymentDataPageTranslations } from "./paymentDataPageTranslations";
 export { default as refundPolicyPageTranslations } from "./refundPolicyPageTranslations";
+export { default as followUpPolicyPageTranslations } from "./followUpPolicyPageTranslations";

@@ -95,7 +95,11 @@ function AboutUs() {
               </Grid>
               <Grid item xs={12}>
                 <Box>
-                  <Typography color="primary.main" sx={{ mt: 2 }} variant="h3">
+                  <Typography
+                    color="secondary.main"
+                    sx={{ mt: 2 }}
+                    variant="h3"
+                  >
                     {translate(
                       "pagesTranslations.homePageTranslations.aboutUs.name"
                     )}
@@ -196,12 +200,11 @@ function AboutUs() {
                     key={index}
                     component={motion.div}
                     initial={{ borderWidth: 24 }} // Start with no border
-                    animate={{ borderWidth: 2 }} // Animate to border thickness of 2
+                    animate={{ borderWidth: 1 }} // Animate to border thickness of 2
                     transition={{ duration: 3, ease: "easeOut" }} // Set duration of animation
                     sx={{
                       ...generateTilesHeight(index),
                       backgroundColor: "transparent", // Keep this transparent
-
                       position: "relative",
                       overflow: "hidden",
                       opacity: 1,
@@ -213,18 +216,20 @@ function AboutUs() {
                 ))}
               </Box>
               {/* The Image */}
-              <Paper
-                elevation={24}
-                component="img"
-                src="coatPic.png"
-                sx={{
-                  width: "93%",
-                  height: "100%",
-                  objectFit: "cover",
-                  zIndex: 1,
-                  borderRadius: 2,
-                }}
-              />
+              <Box sx={{ display: "flex", justifyContent: "center" }}>
+                <Paper
+                  elevation={24}
+                  component="img"
+                  src="coatPicBlueBg.jpg"
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    zIndex: 1,
+                    borderRadius: 2,
+                  }}
+                />
+              </Box>
             </Box>
           </Grid>
         </Grid>

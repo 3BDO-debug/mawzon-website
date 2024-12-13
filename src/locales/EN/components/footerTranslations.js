@@ -21,6 +21,7 @@ const footerTranslations = {
     title: "Terms And Conditions",
     links: {
       refundPolicy: "Refund Policy",
+      followUpPolicy: "Follow-Up Policy",
     },
   },
 };

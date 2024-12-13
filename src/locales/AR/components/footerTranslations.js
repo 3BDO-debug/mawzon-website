@@ -21,6 +21,7 @@ const footerTranslations = {
     title: "الشروط والأحكام",
     links: {
       refundPolicy: "سياسة استرداد الأموال",
+      followUpPolicy: "شروط المتابعة",
     },
   },
 };

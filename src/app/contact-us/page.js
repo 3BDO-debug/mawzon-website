@@ -16,7 +16,10 @@ import useLocales from "@/hooks/useLocales";
 const ContactUsItem = ({ icon, title, value }) => {
   return (
     <Box sx={{ display: "flex", justifyContent: "flex-start", gap: 2 }}>
-      <Iconify sx={{ width: 30, height: 30 }} icon={icon} />
+      <Iconify
+        sx={{ width: 30, height: 30, color: "primary.main" }}
+        icon={icon}
+      />
       <Stack>
         <Typography variant="h6">{title}</Typography>
         <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
@@ -67,7 +70,7 @@ function ContactUsPage() {
                   title={translate(
                     "pagesTranslations.contactUsPageTranslations.email"
                   )}
-                  value="dr.shrouk.marzouk@gmail.com"
+                  value="support@mawzon.com"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -76,7 +79,7 @@ function ContactUsPage() {
                   title={translate(
                     "pagesTranslations.contactUsPageTranslations.workingHours"
                   )}
-                  value="9 AM - 12 AM"
+                  value="9:00 AM - 11:59 PM"
                 />
               </Grid>
             </Grid>

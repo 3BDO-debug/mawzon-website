@@ -75,8 +75,12 @@ function Footer() {
           ),
           href: "/refund-policy",
         },
-        /*  { label: "Account Closure", href: "/" },
-        { label: "Service Suspend", href: "/" }, */
+        {
+          label: translate(
+            "componentsTranslations.footerTranslations.termsAndConditions.links.followUpPolicy"
+          ),
+          href: "/follow-up-policy",
+        },
       ],
     },
   ];

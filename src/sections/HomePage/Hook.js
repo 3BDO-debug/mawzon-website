@@ -17,6 +17,7 @@ import {
 import Iconify from "@/components/Iconify";
 import useLocales from "@/hooks/useLocales";
 import VoiceNotePopUp from "@/components/VoiceNotePopUp";
+import CustomAvatar from "@/components/CustomAvatar";
 
 // --------------------------------------------------------------------------
 
@@ -59,6 +60,7 @@ function Hook() {
                         width: 100,
                         height: 100,
                         boxShadow: (theme) => theme.shadows[5],
+                        cursor: "pointer",
                       }}
                     >
                       <Iconify
@@ -66,24 +68,17 @@ function Hook() {
                         sx={{ fontSize: 60, color: "primary.main" }}
                       />
                     </Avatar>
-                    {/* <Button
-                      startIcon={<Iconify icon="solar:eye-broken" />}
-                      sx={{ transform: "translateY(75%)" }}
-                      size="small"
-                    >
-                      View More
-                    </Button> */}
                   </Stack>
                 </Grid>
                 <Grid item md={2}>
                   <Stack gap={2}>
-                    <Avatar
-                      src="transformations/1.jpeg"
-                      sx={{
-                        width: 150,
-                        height: 150,
-                        boxShadow: theme.shadows[1],
-                      }}
+                    <CustomAvatar
+                      img="transformations/1.jpeg"
+                      width={150}
+                      heigth={150}
+                      story={translate(
+                        "pagesTranslations.homePageTranslations.hook.1"
+                      )}
                     />
                     <Stack direction="row" gap={2}>
                       <Avatar
@@ -95,6 +90,7 @@ function Hook() {
                           width: 45,
                           height: 45,
                           boxShadow: (theme) => theme.shadows[5],
+                          cursor: "pointer",
                         }}
                       >
                         <Iconify
@@ -111,6 +107,7 @@ function Hook() {
                           width: 70,
                           height: 70,
                           boxShadow: (theme) => theme.shadows[5],
+                          cursor: "pointer",
                         }}
                       >
                         <Iconify
@@ -123,15 +120,13 @@ function Hook() {
                 </Grid>
                 <Grid item md={4}>
                   <Box sx={{ position: "relative" }}>
-                    <Avatar
-                      src="transformations/2.jpeg"
-                      sx={{
-                        width: 300,
-                        height: 300,
-                        zIndex: -1,
-                        position: "relative",
-                        boxShadow: theme.shadows[1],
-                      }}
+                    <CustomAvatar
+                      img="transformations/2.jpeg"
+                      width={300}
+                      heigth={300}
+                      story={translate(
+                        "pagesTranslations.homePageTranslations.hook.2"
+                      )}
                     />
                   </Box>
                 </Grid>
@@ -146,6 +141,7 @@ function Hook() {
                         width: 100,
                         height: 100,
                         boxShadow: (theme) => theme.shadows[5],
+                        cursor: "pointer",
                       }}
                     >
                       <Iconify
@@ -153,13 +149,13 @@ function Hook() {
                         sx={{ fontSize: 60, color: "primary.main" }}
                       />
                     </Avatar>
-                    <Avatar
-                      src="transformations/3.jpeg"
-                      sx={{
-                        height: 150,
-                        width: 150,
-                        boxShadow: theme.shadows[5],
-                      }}
+                    <CustomAvatar
+                      img="transformations/3.jpeg"
+                      width={150}
+                      heigth={150}
+                      story={translate(
+                        "pagesTranslations.homePageTranslations.hook.3"
+                      )}
                     />
                   </Stack>
                 </Grid>
@@ -173,6 +169,7 @@ function Hook() {
                       width: 100,
                       height: 100,
                       boxShadow: (theme) => theme.shadows[5],
+                      cursor: "pointer",
                     }}
                   >
                     <Iconify
@@ -182,13 +179,31 @@ function Hook() {
                   </Avatar>
                 </Grid>
                 <Grid item md={4}>
-                  <Avatar
-                    src="transformations/4.jpeg"
-                    sx={{
-                      width: 300,
-                      height: 300,
-                      boxShadow: theme.shadows[5],
-                    }}
+                  <Stack direction="row" gap={1}>
+                    <CustomAvatar
+                      img="transformations/4.jpeg"
+                      width={150}
+                      heigth={150}
+                      story={translate(
+                        "pagesTranslations.homePageTranslations.hook.4"
+                      )}
+                    />
+                    <CustomAvatar
+                      img="transformations/6.jpeg"
+                      width={150}
+                      heigth={150}
+                      story={translate(
+                        "pagesTranslations.homePageTranslations.hook.6"
+                      )}
+                    />
+                  </Stack>
+                  <CustomAvatar
+                    img="transformations/5.jpeg"
+                    width={220}
+                    heigth={220}
+                    story={translate(
+                      "pagesTranslations.homePageTranslations.hook.5"
+                    )}
                   />
                 </Grid>
               </Grid>

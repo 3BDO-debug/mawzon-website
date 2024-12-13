@@ -12,22 +12,27 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/packages/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/packages/page.js"
-    ],
     "/about-us/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/about-us/page.css",
       "static/chunks/app/about-us/page.js"
     ],
+    "/refund-policy/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/refund-policy/page.js"
+    ],
     "/contact-us/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/contact-us/page.css",
       "static/chunks/app/contact-us/page.js"
+    ],
+    "/follow-up-policy/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/follow-up-policy/page.js"
     ]
   }
 }

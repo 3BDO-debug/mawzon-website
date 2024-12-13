@@ -27,7 +27,6 @@ const ReviewCard = ({ category, review, avatar, name, index, role }) => {
     <Box sx={{ px: 5, py: 3 }}>
       <Paper
         sx={{
-          // bgcolor: "#dcf6f4",
           px: 3,
           py: 4,
           borderRadius: 7,
@@ -302,7 +301,7 @@ function Reviews() {
   ];
 
   return (
-    <Box sx={{ width: "100%", py: 10, bgcolor: "#dcf6f4" }}>
+    <Box sx={{ width: "100%", py: 10, bgcolor: "#b0eae3", mt: 5 }}>
       <Grid container>
         <Grid item xs={12}>
           <Stack direction="row" justifyContent="center">

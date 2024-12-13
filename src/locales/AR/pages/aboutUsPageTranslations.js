@@ -2,7 +2,7 @@ const aboutUsPageTranslations = {
   thumbnail: "من الرؤية إلى الواقع: القصة الملهمة وراء موزون للدكتورة شروق علي",
   ourStory: {
     title: "قصتنا",
-    subtitle: "كيف بدأت الرحلة",
+    subtitle: "شهادات تروي قصص التميز",
     timeline: {
       1: {
         title: "أخصائي معتمد لإدارة السمنة",

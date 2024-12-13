@@ -3,7 +3,7 @@ const headerTranslations = {
     home: "الرئيسية",
     aboutUs: "معلومات عنا",
     contactUs: "تواصلي معنا",
-    packages: "الخدمات",
+    packages: "البطاقات",
   },
   sideDrawer: {
     actionButton: "تواصلي معنا",

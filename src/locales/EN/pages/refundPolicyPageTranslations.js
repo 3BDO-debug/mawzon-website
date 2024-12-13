@@ -4,9 +4,8 @@ const refundPolicyPageTranslations = {
   hook: "At Mawzon, your satisfaction is our priority. We strive to offer top-notch nutrition and workout plans tailored to your specific needs. However, if you are not fully satisfied with our services, we have set clear guidelines for our refund policy.",
   eligibility: {
     title: "Eligibility for Refunds:",
-    1: "One-Time Purchases:If you purchased a one-time service or product (such as a customized nutrition plan or workout guide), refunds are available only if the service has not been delivered yet. Once the service is rendered or product is accessed, no refund will be granted.",
-    2: "Bundle Packages:For bundle offers that include multiple services, refunds are available if none of the services have been used. If any portion of the bundle has been accessed or completed, we cannot offer a refund.",
-    3: "Security Concerns: If we detect unusual activity or suspect that your account has been compromised,we may temporarily suspend access to investigate and resolve the issue.",
+    1: "Subscription or any part of it is non-refundable after 24 hours from the date and time of payment, regardless of the subscription duration.",
+    2: "Offer Packages: For package offers that include multiple services, refunds are only available if none of the services have been used during the applicable refund period. If any part of the package has been accessed or completed, we cannot provide a refund.",
   },
   howToRequest: {
     title: "How to Request a Refund:",

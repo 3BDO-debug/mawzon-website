@@ -52,11 +52,11 @@ function RefundPolicyPage() {
               )}
             </Typography>
 
-            <Typography component="li" sx={{ mt: 2 }}>
+            {/* <Typography component="li" sx={{ mt: 2 }}>
               {translate(
                 "pagesTranslations.refundPolicyPageTranslations.eligibility.3"
               )}
-            </Typography>
+            </Typography> */}
           </Card>
         </Grid>
         <Grid item xs={12} md={5}>

@@ -3,6 +3,7 @@ import React from "react";
 // @Mui
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import useLocales from "@/hooks/useLocales";
+import Iconify from "@/components/Iconify";
 
 // --------------------------------------------------------------
 

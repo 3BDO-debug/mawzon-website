@@ -2,8 +2,8 @@ const aboutUsPageTranslations = {
   thumbnail:
     "From Vision to Reality: The Inspiring Story Behind Mawzon by Dr. Shrouk Ali",
   ourStory: {
-    title: "certification",
-    subtitle: "How It All Started",
+    title: "Certifications",
+    subtitle: "Proof of excellence..",
     timeline: {
       1: {
         title: "Certified Obesity Management Specialist",

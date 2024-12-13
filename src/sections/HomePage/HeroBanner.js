@@ -1,10 +1,12 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState, useRef } from "react";
 // next
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-// framer-motion
-import { motion } from "framer-motion";
+// react-slick
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 // recoil
 import { themeModeAtom } from "@/recoil";
 import { useRecoilValue, useSetRecoilState } from "recoil";
@@ -14,19 +16,124 @@ import {
   Button,
   Container,
   Grid,
-  Paper,
   Stack,
   Typography,
-  Popover,
+  CardContent,
+  Card,
+  Chip,
+  useTheme,
+  IconButton,
 } from "@mui/material";
 // assets
-import tornHole from "@/assets/torn-hole.png";
 import useLocales from "@/hooks/useLocales";
 import userIpRegionAtom from "@/recoil/atoms/userIpRegionAtom";
 import { userIpRegionFetcher } from "@/__apis__/userIpRegion";
-// -----------------------------------------------------------------------------------
+import Iconify from "@/components/Iconify";
+// -----------------------------------------------------------------
 
+const TransfomationsCard = ({
+  name,
+  before,
+  after,
+  weigthBefore,
+  weightAfter,
+  story,
+}) => {
+  const { currentLang } = useLocales();
+  return (
+    <Card
+      sx={{
+        border: 1,
+        borderColor: "primary.main",
+        mx: 2,
+        borderRadius: 6,
+        // bgcolor: "#b0eae3",
+      }}
+    >
+      <CardContent>
+        <Typography
+          variant="h6"
+          sx={{
+            color: "secondary.main",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          {name}
+        </Typography>
+        <Stack
+          direction="row"
+          gap={4}
+          sx={{ display: "flex", justifyContent: "center", mt: 2 }}
+        >
+          <Box>
+            <Box
+              component="img"
+              src={before}
+              sx={{
+                width: 200,
+                height: 350,
+                maxHeight: "auto",
+                objectFit: "cover",
+                borderRadius: 2,
+                mb: 1,
+              }}
+            />
+            <Chip
+              label={weigthBefore}
+              sx={{
+                color: "secondary.main",
+                bgcolor: "transparent",
+                border: 1,
+                borderColor: "secondary.main",
+                display: "flex",
+              }}
+            />
+          </Box>
+          <Box>
+            <Box
+              component="img"
+              src={after}
+              sx={{
+                width: 200,
+                height: 350,
+                maxHeight: "auto",
+                objectFit: "cover",
+                borderRadius: 2,
+                mb: 1,
+              }}
+            />
+            <Chip
+              label={weightAfter}
+              sx={{
+                color: "secondary.main",
+                bgcolor: "transparent",
+                border: 1,
+                borderColor: "secondary.main",
+                display: "flex",
+              }}
+            />
+          </Box>
+        </Stack>
+        <Typography
+          variant="body2"
+          sx={{
+            mt: 2,
+            direction: currentLang.value === "ar" ? "rtl" : "ltr",
+            fontWeight: "bold",
+            mx: 3,
+          }}
+        >
+          {story}
+        </Typography>
+      </CardContent>
+    </Card>
+  );
+};
+
+// -----------------------------------------------------------------
 function HeroBanner() {
+  const theme = useTheme();
   const themeMode = useRecoilValue(themeModeAtom);
 
   const { translate, currentLang } = useLocales();
@@ -50,25 +157,43 @@ function HeroBanner() {
     fetchUserIpRegion();
   }, []);
 
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [popoverContent, setPopoverContent] = useState(null);
+  //----------------------------------------------
+  const carouselRef = useRef();
 
-  const handlePopoverOpen = (event, transformation) => {
-    setAnchorEl(event.currentTarget);
-    setPopoverContent(transformation);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const totalSlides = 5;
+  const slidesToShow = 1;
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: slidesToShow,
+    slidesToScroll: 1,
+    centerMode: true,
+    infinite: true,
+    centerPadding: "10px",
+    afterChange: (current) => setCurrentSlide(current),
   };
 
-  const handlePopoverClose = () => {
-    setAnchorEl(null);
-    setPopoverContent(null);
-  };
-
-  const open = Boolean(anchorEl);
+  const indicatorWidth = 150;
+  const slideWidth = indicatorWidth / slidesToShow;
+  const translateX =
+    currentLang.value === "ar"
+      ? -(currentSlide % slidesToShow) * slideWidth // Negative value for "ar"
+      : (currentSlide % slidesToShow) * slideWidth; // Default positive value
 
   //-----------------------------------
 
   const transformations = [
     {
+      weigthBefore: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.1.before"
+      ),
+      weightAfter: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.1.after"
+      ),
       before: "/transformations/zeinab-before.jpeg",
       after: "/transformations/zeinab-after.jpeg",
       story: translate(
@@ -79,6 +204,12 @@ function HeroBanner() {
       ),
     },
     {
+      weigthBefore: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.2.before"
+      ),
+      weightAfter: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.2.after"
+      ),
       before: "/transformations/mawada-before.jpeg",
       after: "/transformations/mawada-after.jpeg",
       story: translate(
@@ -89,6 +220,12 @@ function HeroBanner() {
       ),
     },
     {
+      weigthBefore: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.3.before"
+      ),
+      weightAfter: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.3.after"
+      ),
       before: "/transformations/basma-before.jpeg",
       after: "/transformations/basma-after.jpeg",
       story: translate(
@@ -99,6 +236,12 @@ function HeroBanner() {
       ),
     },
     {
+      weigthBefore: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.4.before"
+      ),
+      weightAfter: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.4.after"
+      ),
       before: "/transformations/reham-before.jpeg",
       after: "/transformations/reham-after.jpeg",
       story: translate(
@@ -109,23 +252,19 @@ function HeroBanner() {
       ),
     },
     {
-      before: "/transformations/elham-before.jpeg",
-      after: "/transformations/elham-after.jpeg",
+      weigthBefore: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.5.before"
+      ),
+      weightAfter: translate(
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.5.after"
+      ),
+      before: "/transformations/nada-before.jpeg",
+      after: "/transformations/nada-after.jpeg",
       story: translate(
         "pagesTranslations.homePageTranslations.heroBanner.transformations.5.story"
       ),
       name: translate(
         "pagesTranslations.homePageTranslations.heroBanner.transformations.5.name"
-      ),
-    },
-    {
-      before: "/transformations/doa-before.jpeg",
-      after: "/transformations/doa-after.jpeg",
-      story: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.6.story"
-      ),
-      name: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.6.name"
       ),
     },
   ];
@@ -135,7 +274,7 @@ function HeroBanner() {
       <Container>
         <Grid container rowSpacing={3} columnSpacing={6}>
           {/* Story Viewer */}
-          <Grid item xs={12} md={6} sx={{ mt: 10 }}>
+          <Grid item xs={12} md={6} sx={{ mt: 15 }}>
             <Stack sx={{ zIndex: 10 }}>
               <Typography
                 sx={{
@@ -180,140 +319,91 @@ function HeroBanner() {
             </Stack>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Box
-              sx={{
-                position: "relative",
-                height: 400,
-                width: "100%",
-                overflow: "hidden",
-              }}
-            >
-              <Image
-                src={tornHole}
-                alt="torn hole"
-                objectFit="cover"
-                layout="fill"
-              />
-
-              <Stack
-                direction="row"
-                flexWrap="wrap"
-                sx={{
-                  overflow: "hidden",
-                  gap: 2,
-                  position: "absolute",
-                  backgroundColor:
-                    themeMode.mode === "light" ? "grey.900" : "grey.100",
-                  justifyContent: "center",
-                  maxHeight: { xs: 500, md: 350 },
-                  clipPath: "circle(35% at 50% 50%)",
-                  left: "-9%",
-                  top: { xs: "10%", md: "12%" },
-                  zIndex: 1,
-                  transform: "rotate(8deg)",
-                }}
-              >
-                {transformations.map((transformation, index) => (
-                  <motion.div
-                    drag
-                    dragConstraints={{
-                      left: -100,
-                      top: -100,
-                      right: 100,
-                      bottom: 100,
-                    }}
-                  >
-                    <Paper
-                      elevation={24}
-                      key={index}
-                      sx={{
-                        width: 140,
-                        height: 140,
-                        borderRadius: 2,
-                        objectFit: "cover",
-                        cursor: "pointer",
-                        transition: "all 0.7s ease-in-out",
-                        "&:hover": {
-                          scale: 1.1,
-                        },
-                      }}
-                      component="img"
-                      src={transformation.after}
-                      alt={`${transformation.name} - After`}
-                      onMouseEnter={(e) => handlePopoverOpen(e, transformation)}
-                      onMouseLeave={(e) => {
-                        const relatedTarget = e.relatedTarget;
-                        if (!relatedTarget) {
-                          handlePopoverClose();
-                        }
-                      }}
-                    />
-                  </motion.div>
+            <Box>
+              <Slider ref={carouselRef} {...settings}>
+                {transformations.map((data, index) => (
+                  <TransfomationsCard
+                    key={index}
+                    name={data.name}
+                    story={data.story}
+                    before={data.before}
+                    after={data.after}
+                    weigthBefore={data.weigthBefore}
+                    weightAfter={data.weightAfter}
+                  />
                 ))}
-              </Stack>
-              <Popover
-                open={open}
-                anchorEl={anchorEl}
-                onClose={handlePopoverClose}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "center",
-                }}
-                transformOrigin={{
-                  vertical: "bottom",
-                  horizontal: "center",
-                }}
-                PaperProps={{
-                  sx: { p: 1, borderRadius: 2 },
-                }}
-                disableRestoreFocus
-              >
-                {popoverContent && (
-                  <Box sx={{ textAlign: "center", maxWidth: 430 }}>
-                    <Stack
-                      direction="row"
-                      gap={3}
-                      sx={{ display: "flex", justifyContent: "center" }}
-                    >
-                      <Box
-                        component="img"
-                        src={popoverContent.before}
-                        alt={`${popoverContent.name} - Before`}
-                        sx={{
-                          width: 200,
-                          height: "auto",
-                          maxHeight: 280,
-                          objectFit: "cover",
-                          borderRadius: 2,
-                          mb: 1,
-                        }}
-                      />
-                      <Box
-                        component="img"
-                        src={popoverContent.after}
-                        alt={`${popoverContent.name} - After`}
-                        sx={{
-                          width: 200,
-                          height: "auto",
-                          maxHeight: 280,
-                          objectFit: "cover",
-                          borderRadius: 2,
-                          mb: 1,
-                        }}
-                      />
-                    </Stack>
-                    <Typography variant="h6" sx={{ color: "primary.main" }}>
-                      {popoverContent.name}
-                    </Typography>
-                    <Typography variant="body2">
-                      {popoverContent.story}
-                    </Typography>
-                  </Box>
-                )}
-              </Popover>
+              </Slider>
             </Box>
+            <Stack
+              justifyContent="center"
+              direction="row"
+              width="100%"
+              marginTop={1}
+            >
+              {/* Left Arrow */}
+              <IconButton
+                disabled={currentSlide === 0}
+                onClick={() => carouselRef?.current.slickPrev()}
+              >
+                <Iconify
+                  icon={
+                    currentLang.value === "ar"
+                      ? "iconamoon:arrow-right-2-light"
+                      : "iconamoon:arrow-left-2-light"
+                  }
+                  sx={{
+                    width: currentSlide === 0 ? 25 : 40,
+                    height: currentSlide === 0 ? 25 : 40,
+                    transition: "all 0.7s ease-out",
+                  }}
+                />
+              </IconButton>
+              {/* Indicator */}
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <Typography sx={{ ml: 2, mb: 1 }} variant="subtitle1">
+                  {currentSlide + 1} / {totalSlides}
+                </Typography>
+                <Box
+                  sx={{
+                    backgroundColor: "grey.400",
+                    borderRadius: 1,
+                    width: indicatorWidth,
+                    height: 3,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      backgroundColor: "grey.800",
+                      borderRadius: 3,
+                      width: `${slideWidth}px`,
+                      height: 3,
+                      transform: `translateX(${translateX}px)`,
+                      transition: "all 0.7s ease-out",
+                    }}
+                  />
+                </Box>
+              </Box>
+              {/* Right Arrow */}
+              <IconButton
+                disabled={currentSlide + 1 === totalSlides}
+                onClick={() => carouselRef?.current.slickNext()}
+              >
+                <Iconify
+                  icon={
+                    currentLang.value === "ar"
+                      ? "iconamoon:arrow-left-2-light"
+                      : "iconamoon:arrow-right-2-light"
+                  }
+                  sx={{
+                    width: currentSlide === totalSlides - 1 ? 25 : 40,
+                    height: currentSlide === totalSlides - 1 ? 25 : 40,
+                    transition: "all 0.7s ease-out",
+                  }}
+                />
+              </IconButton>
+            </Stack>
           </Grid>
-          <Grid item xs={12} md={6} sx={{ mt: { xs: 0, md: -30 } }}>
+          <Grid item xs={12} md={6} sx={{ mt: { xs: 0, md: -50 } }}>
             <Typography sx={{ mt: 1.5 }}>
               {translate(
                 "pagesTranslations.homePageTranslations.heroBanner.description"
@@ -350,7 +440,6 @@ function HeroBanner() {
           </Grid>
         </Grid>
       </Container>
-      {/* Page tear */}
     </Box>
   );
 }
