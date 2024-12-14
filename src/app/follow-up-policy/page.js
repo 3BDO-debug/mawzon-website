@@ -56,8 +56,10 @@ function page() {
             <Typography component="li" sx={{ mt: 2 }}>
               {translate("pagesTranslations.followUpPolicyPageTranslations.9")}
             </Typography>
-            <Typography component="li" sx={{ mt: 2 }}>
-              {translate("pagesTranslations.followUpPolicyPageTranslations.10")}
+            <Typography sx={{ mt: 3, color: "primary.main" }}>
+              {translate(
+                "pagesTranslations.followUpPolicyPageTranslations.hook"
+              )}
             </Typography>
           </Card>
         </Grid>
