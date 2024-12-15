@@ -357,7 +357,7 @@ function Reviews() {
           >
             {/* Left Arrow */}
             <IconButton
-              disabled={currentSlide === 0}
+              // disabled={currentSlide === 0}
               onClick={() => carouselRef?.current.slickPrev()}
             >
               <Iconify
@@ -400,7 +400,7 @@ function Reviews() {
             </Box>
             {/* Right Arrow */}
             <IconButton
-              disabled={currentSlide + 1 === totalSlides}
+              // disabled={currentSlide + 1 === totalSlides}
               onClick={() => carouselRef?.current.slickNext()}
             >
               <Iconify

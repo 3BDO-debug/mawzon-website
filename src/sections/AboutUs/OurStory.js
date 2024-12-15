@@ -16,13 +16,15 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 // assets
-import cer2019 from "../../../public/certificates/2019.jpg";
-import cer2021 from "../../../public/certificates/early-2021.jpg";
-import oct2021 from "../../../public/certificates/oct-2021.jpg";
-import mar2022 from "../../../public/certificates/mar-2022.jpg";
-import nov2022 from "../../../public/certificates/nov-2022.jpg";
-import cer2023 from "../../../public/certificates/2023.jpg";
-import grad from "../../../public/certificates/Grad.jpg";
+import cer1 from "../../../public/certificates/1.jpg";
+import cer2 from "../../../public/certificates/2.jpg";
+import cer3 from "../../../public/certificates/3.jpg";
+import cer4 from "../../../public/certificates/4.jpg";
+import cer5 from "../../../public/certificates/5.jpg";
+import cer6 from "../../../public/certificates/6.jpg";
+import cer7 from "../../../public/certificates/7.jpg";
+import cer8 from "../../../public/certificates/8.jpg";
+import cer9 from "../../../public/certificates/9.jpeg";
 // components
 import useLocales from "@/hooks/useLocales";
 import { useTheme } from "@emotion/react";
@@ -89,7 +91,7 @@ function OurStory() {
 
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const totalSlides = 7; // Total number of slides
+  const totalSlides = 9; // Total number of slides
   const slidesToShow = isMobile ? 1 : 3; // Number of slides shown in the carousel
 
   const settings = {
@@ -113,60 +115,67 @@ function OurStory() {
 
   const story = [
     {
-      label: "2019",
       title: translate(
         "pagesTranslations.aboutUsPageTranslations.ourStory.timeline.1.title"
       ),
       color: "primary.main",
-      img: cer2019,
+      img: cer1,
     },
     {
-      label: "2021",
       title: translate(
         "pagesTranslations.aboutUsPageTranslations.ourStory.timeline.2.title"
       ),
       color: "#9400FF",
-      img: cer2021,
+      img: cer2,
     },
     {
-      label: "OCT - 2021",
       title: translate(
         "pagesTranslations.aboutUsPageTranslations.ourStory.timeline.3.title"
       ),
       color: "#FFAB00",
-      img: oct2021,
+      img: cer3,
     },
     {
-      label: "MAR - 2022",
       title: translate(
         "pagesTranslations.aboutUsPageTranslations.ourStory.timeline.4.title"
       ),
       color: "#22C55E",
-      img: mar2022,
+      img: cer4,
     },
     {
-      label: "NOV - 2022",
       title: translate(
         "pagesTranslations.aboutUsPageTranslations.ourStory.timeline.5.title"
       ),
       color: "#FF4500",
-      img: nov2022,
+      img: cer5,
     },
     {
-      label: "2023",
       title: translate(
         "pagesTranslations.aboutUsPageTranslations.ourStory.timeline.6.title"
       ),
       color: "#1E90FF",
-      img: cer2023,
+      img: cer6,
     },
     {
-      label: "2022",
       title: translate(
         "pagesTranslations.aboutUsPageTranslations.ourStory.timeline.7.title"
       ),
       color: "#1E90FF",
-      img: grad,
+      img: cer7,
+    },
+    {
+      title: translate(
+        "pagesTranslations.aboutUsPageTranslations.ourStory.timeline.8.title"
+      ),
+      color: "#1E90FF",
+      img: cer8,
+    },
+    {
+      title: translate(
+        "pagesTranslations.aboutUsPageTranslations.ourStory.timeline.9.title"
+      ),
+      color: "#1E90FF",
+      img: cer9,
     },
   ];
 
@@ -268,7 +277,7 @@ function OurStory() {
           >
             {/* Left Arrow */}
             <IconButton
-              disabled={currentSlide === 0}
+              // disabled={currentSlide === 0}
               onClick={() => carouselRef?.current.slickPrev()}
             >
               <Iconify
@@ -311,7 +320,7 @@ function OurStory() {
             </Box>
             {/* Right Arrow */}
             <IconButton
-              disabled={currentSlide + 1 === totalSlides}
+              // disabled={currentSlide + 1 === totalSlides}
               onClick={() => carouselRef?.current.slickNext()}
             >
               <Iconify

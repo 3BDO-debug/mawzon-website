@@ -57,7 +57,7 @@ function SideDrawer({ isTriggered, closeHandler, links }) {
             sx={{ cursor: "pointer" }}
           >
             <Iconify
-              icon="mdi:instagram"
+              icon="skill-icons:instagram"
               sx={{ width: 25, height: 25, color: theme.palette.grey[600] }}
             />
           </Box>
@@ -73,7 +73,7 @@ function SideDrawer({ isTriggered, closeHandler, links }) {
             sx={{ cursor: "pointer" }}
           >
             <Iconify
-              icon="mdi:facebook"
+              icon="logos:facebook"
               sx={{ width: 25, height: 25, color: theme.palette.grey[600] }}
             />
           </Box>
@@ -91,7 +91,7 @@ function SideDrawer({ isTriggered, closeHandler, links }) {
             sx={{ cursor: "pointer" }}
           >
             <Iconify
-              icon="ic:baseline-tiktok"
+              icon="logos:tiktok-icon"
               sx={{ width: 25, height: 25, color: theme.palette.grey[600] }}
             />
           </Box>

@@ -23,6 +23,7 @@ import {
   Chip,
   useTheme,
   IconButton,
+  Icon,
 } from "@mui/material";
 // assets
 import useLocales from "@/hooks/useLocales";
@@ -158,31 +159,19 @@ function HeroBanner() {
   }, []);
 
   //----------------------------------------------
+
   const carouselRef = useRef();
-
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const totalSlides = 5;
-  const slidesToShow = 1;
 
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
-    slidesToShow: slidesToShow,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    centerMode: true,
-    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
     centerPadding: "10px",
-    afterChange: (current) => setCurrentSlide(current),
+    arrows: false,
   };
-
-  const indicatorWidth = 150;
-  const slideWidth = indicatorWidth / slidesToShow;
-  const translateX =
-    currentLang.value === "ar"
-      ? -(currentSlide % slidesToShow) * slideWidth // Negative value for "ar"
-      : (currentSlide % slidesToShow) * slideWidth; // Default positive value
 
   //-----------------------------------
 
@@ -319,7 +308,7 @@ function HeroBanner() {
             </Stack>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Box>
+            <Box sx={{ position: "relative" }}>
               <Slider ref={carouselRef} {...settings}>
                 {transformations.map((data, index) => (
                   <TransfomationsCard
@@ -334,74 +323,6 @@ function HeroBanner() {
                 ))}
               </Slider>
             </Box>
-            <Stack
-              justifyContent="center"
-              direction="row"
-              width="100%"
-              marginTop={1}
-            >
-              {/* Left Arrow */}
-              <IconButton
-                disabled={currentSlide === 0}
-                onClick={() => carouselRef?.current.slickPrev()}
-              >
-                <Iconify
-                  icon={
-                    currentLang.value === "ar"
-                      ? "iconamoon:arrow-right-2-light"
-                      : "iconamoon:arrow-left-2-light"
-                  }
-                  sx={{
-                    width: currentSlide === 0 ? 25 : 40,
-                    height: currentSlide === 0 ? 25 : 40,
-                    transition: "all 0.7s ease-out",
-                  }}
-                />
-              </IconButton>
-              {/* Indicator */}
-              <Box sx={{ display: "flex", flexDirection: "column" }}>
-                <Typography sx={{ ml: 2, mb: 1 }} variant="subtitle1">
-                  {currentSlide + 1} / {totalSlides}
-                </Typography>
-                <Box
-                  sx={{
-                    backgroundColor: "grey.400",
-                    borderRadius: 1,
-                    width: indicatorWidth,
-                    height: 3,
-                  }}
-                >
-                  <Box
-                    sx={{
-                      backgroundColor: "grey.800",
-                      borderRadius: 3,
-                      width: `${slideWidth}px`,
-                      height: 3,
-                      transform: `translateX(${translateX}px)`,
-                      transition: "all 0.7s ease-out",
-                    }}
-                  />
-                </Box>
-              </Box>
-              {/* Right Arrow */}
-              <IconButton
-                disabled={currentSlide + 1 === totalSlides}
-                onClick={() => carouselRef?.current.slickNext()}
-              >
-                <Iconify
-                  icon={
-                    currentLang.value === "ar"
-                      ? "iconamoon:arrow-left-2-light"
-                      : "iconamoon:arrow-right-2-light"
-                  }
-                  sx={{
-                    width: currentSlide === totalSlides - 1 ? 25 : 40,
-                    height: currentSlide === totalSlides - 1 ? 25 : 40,
-                    transition: "all 0.7s ease-out",
-                  }}
-                />
-              </IconButton>
-            </Stack>
           </Grid>
           <Grid item xs={12} md={6} sx={{ mt: { xs: 0, md: -50 } }}>
             <Typography sx={{ mt: 1.5 }}>

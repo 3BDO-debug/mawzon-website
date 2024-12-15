@@ -6,38 +6,39 @@ const aboutUsPageTranslations = {
     subtitle: "Proof of excellence..",
     timeline: {
       1: {
-        title: "Certified Obesity Management Specialist",
-        description:
-          "Achieved specialization in obesity management, focusing on tailored solutions to support individuals in achieving healthy weight goals.",
+        title:
+          "Diploma in Therapeutic Nutrition from the Faculty of Pharmacy, Tanta University",
       },
       2: {
-        title: "Member of the Egyptian Society of Nutrition Pharmacists",
-        description:
-          "Joined the prestigious society, reinforcing expertise in the intersection of nutrition and pharmacology for improved patient outcomes.",
+        title:
+          "Certified Specialist in Obesity Disease Treatment from the Giza Pharmacists Syndicate",
       },
       3: {
-        title: "Basic Training on Nutrition in Emergencies",
-        description:
-          "Completed foundational training to provide nutritional care in emergency situations, ensuring readiness to address urgent health needs.",
+        title:
+          "Diploma in the Treatment of Obesity and Thinness Diseases, certified by the World Obesity Federation",
       },
       4: {
-        title: "Strategic Centre for Obesity Professional Education Programme",
-        description:
-          "Graduated from an advanced obesity education program, enhancing strategic expertise in managing obesity through modern, evidence-based approaches.",
+        title:
+          "Certified Clinical Nutrition Specialist from the Pharmacists Syndicate of Egypt",
       },
       5: {
         title:
-          "Workshop Training in Nutritional Therapy for Diverse Conditions",
-        description:
-          "Gained hands-on training in nutritional therapy for conditions including thyroid disorders, liver disease, bariatric surgery, sports nutrition, menopause, geriatrics, skincare, and GI issues.",
+          "Member of the Egyptian-Arab Society for Healthy and Therapeutic Nutrition (EASHTN)",
       },
       6: {
-        title: "Intellect Certified Health Coach Program",
-        description:
-          "Earned certification as a health coach, mastering client-centered techniques to empower individuals to achieve their health and wellness goals.",
+        title:
+          "Training on the Fundamentals of Nutrition in Emergency Cases, certified by UNICEF",
       },
       7: {
-        title: "Nutrition in Health Care Diploma – Tanta University",
+        title:
+          "Training Workshop on Nutritional Therapy for Various Medical Conditions",
+      },
+      8: {
+        title:
+          "Certified Health Coach by the International Coaching Federation (ICF)",
+      },
+      9: {
+        title: "Member of the Egyptian Society of Nutrition Pharmacists (ESNP)",
       },
     },
   },
