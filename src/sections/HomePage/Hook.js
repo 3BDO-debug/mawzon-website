@@ -48,8 +48,13 @@ function Hook() {
           </Grid>
           <Grid item xs={12}>
             <Box sx={{ overflow: "hidden", mt: 4 }}>
-              <Grid sx={{ flexWrap: "nowrap" }} container columnSpacing={1}>
-                <Grid item md={2}>
+              <Grid container columnSpacing={1}>
+                <Grid
+                  sx={{ display: "flex", justifyContent: "center" }}
+                  item
+                  xs={12}
+                  md={1.1}
+                >
                   <Stack>
                     <Avatar
                       onClick={() => {
@@ -70,7 +75,12 @@ function Hook() {
                     </Avatar>
                   </Stack>
                 </Grid>
-                <Grid item md={2}>
+                <Grid
+                  sx={{ display: "flex", justifyContent: "center" }}
+                  item
+                  xs={12}
+                  md={1.5}
+                >
                   <Stack gap={2}>
                     <CustomAvatar
                       img="transformations/1.jpeg"
@@ -118,7 +128,12 @@ function Hook() {
                     </Stack>
                   </Stack>
                 </Grid>
-                <Grid item md={4}>
+                <Grid
+                  sx={{ display: "flex", justifyContent: "center" }}
+                  item
+                  xs={12}
+                  md={3.4}
+                >
                   <Box sx={{ position: "relative" }}>
                     <CustomAvatar
                       img="transformations/2.jpeg"
@@ -130,7 +145,12 @@ function Hook() {
                     />
                   </Box>
                 </Grid>
-                <Grid item md={2}>
+                <Grid
+                  sx={{ display: "flex", justifyContent: "center" }}
+                  item
+                  xs={12}
+                  md={1.3}
+                >
                   <Stack gap={2}>
                     <Avatar
                       onClick={() => {
@@ -159,7 +179,12 @@ function Hook() {
                     />
                   </Stack>
                 </Grid>
-                <Grid item md={2}>
+                <Grid
+                  sx={{ display: "flex", justifyContent: "center" }}
+                  item
+                  xs={12}
+                  md={1.1}
+                >
                   <Avatar
                     onClick={() => {
                       setSelectedVoice(voice5);
@@ -178,7 +203,15 @@ function Hook() {
                     />
                   </Avatar>
                 </Grid>
-                <Grid item md={4}>
+                <Grid
+                  sx={{
+                    display: { sm: "flex", md: "block" },
+                    justifyContent: "center",
+                  }}
+                  item
+                  xs={12}
+                  md={2}
+                >
                   <Stack direction="row" gap={1}>
                     <CustomAvatar
                       img="transformations/4.jpeg"
