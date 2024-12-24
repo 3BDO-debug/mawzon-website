@@ -113,17 +113,17 @@ const homePageTranslations = {
       1: {
         name: "Jihad Mahmoud Shehata",
         review:
-          "My experience with Dr. Shorouq has been excellent. She helped me adjust my diet and provided several alternatives for different things. She also followed up with me daily on the plan I was following. I tend to like sweets, but she included recipes that made me not feel the need to turn to sugary foods. I lost around 10 kilograms in 4 months, even though I wasn’t very focused on exercising at first because of work. If I had, the results would have been even better. I never felt deprived, especially during Eid when I didn’t feel the urge to go off the diet. If I ever slipped, she encouraged me to get back on track as if nothing had happened. The difference in measurements is very noticeable, especially in my home and outdoor clothes, where I used to dislike how I looked. Thankfully, things have improved a lot.",
+          "My follow-up with Dr. Shorouk was excellent. She helped me adjust my eating habits and provided many alternatives for certain things. The follow-up was daily on the plan I was following. I love sweets a bit, but she included recipes that made me not feel the need to resort to sugary treats. I lost about 10 kilograms in four months, even though I wasn't focused on exercise at first because of work. If I had paid more attention to it, the progress would have been even better. I didn’t feel deprived at all; even during the Eid holidays, I didn’t feel like ruining the diet. If I ever slipped, she encouraged me to get back on track as if nothing happened. The difference in measurements is very noticeable, both in my home clothes and the outfits I didn’t like how I looked in before. Thank God, things have improved a lot.",
       },
       2: {
-        name: "Sarah Hossam",
+        name: "Mona Yehia",
         review:
-          "Thank you so much, doctor. Honestly, without your help, I wouldn't have been able to reach this weight during breastfeeding. With your guidance, I also managed to maintain breastfeeding, even though I was struggling due to my daughter's dairy allergy and had to cut out dairy products. I used to feel dizzy and weak all the time, but with your support, I improved, and my milk supply got much better. Plus, I got my body back",
+          "Truly, Doctor, thank you so much. Honestly, without you, I wouldn’t have been able to reach this weight during breastfeeding. With your help, I was even able to maintain natural breastfeeding despite my daughter’s dairy allergy, which forced me to cut out those products. I used to always feel weak and dizzy, but with your guidance, I improved significantly, and breastfeeding and milk production became much better. Plus, I got my body back.",
       },
       3: {
-        name: "Monira Al-anan",
+        name: "Sarah Hossam",
         review:
-          "Firstly, my health has improved significantly. The plan made a huge difference to my overall well-being. Secondly, my acid reflux almost disappeared when I started sticking to regular meal times and supplements. It’s gone, and now I can sleep without needing anything for heartburn. Thirdly, my appearance has changed a lot, and that boosted my confidence. I feel much better about how I look, and I’m really happy with my body now. Lastly, the daily follow-up with you made it easy for me to stay consistent with the plan. So, thank you so much .",
+          "First and foremost, my health. Honestly, the plan made a huge difference in my overall health. Secondly, my acid reflux almost completely disappeared when I followed the plan and Dr. Shorouk’s instructions. It’s truly gone, and now I can sleep without any issues with acidity. Thirdly, there’s a significant change in my appearance, which has improved my mood, boosted my confidence, and made me happy with how my body looks. Lastly, the daily follow-ups with you made it so easy for me to stick to the plan. So, truly, thank you.",
       },
       4: {
         name: "Rana Emad",
@@ -136,9 +136,9 @@ const homePageTranslations = {
           "Thank you so much, doctor . I’ve noticed that my stomach has calmed down. I used to wake up with stomach pain, but now about 80% of that morning and daily discomfort has gone away, thank God . The symptoms of irritable bowel syndrome, like bloating and other issues, have also disappeared. This was actually the reason I couldn’t eat much before.",
       },
       6: {
-        name: "Basma Samir",
+        name: "Nisreen Osama Al-Sihily",
         review:
-          "Firstly, my health has truly improved significantly; the plan has made a big difference in every aspect of my life. Secondly, my acid reflux has almost disappeared since I started sticking to regular meal times and taking supplements. Now, I can sleep without needing anything for heartburn. Thirdly, my appearance has changed a lot, which has improved my mood and boosted my confidence. I'm really happy with how my body looks. Lastly, the daily follow-up with you has made it easy for me to stick to the plan, so thank you so much .",
+          "I had issues with my digestive system, colitis, H. pylori infection, and a thyroid problem. I had been struggling with thinness for four years, eating only two meals a day, until I came across Dr. Shorouk on Instagram and signed up with her. She created a plan tailored to my condition, and within the first two weeks, I noticed a difference and improvement in my body. I started eating more than three main meals and two snacks, and the plan eliminated my need for sugary foods. I learned what foods suit my stomach and colon. I signed up with her for three months—my weight was 45 kg and became 53 kg, so I gained 8 kg, even though I wasn’t 100% committed to the plan. Thank God, my appetite improved, and I started eating more. I want to thank Dr. Shorouk for her efforts with me; she is very kind, sweet, and cooperative. What I achieved with her is truly a great accomplishment.",
       },
       7: {
         name: "Riham Sami",
@@ -146,14 +146,14 @@ const homePageTranslations = {
           "I want to thank you so much, doctor. I was 43 kilograms, and now I’m 50. I’ve started feeling hungry and eating well without any appetite stimulants. In the beginning, my stomach couldn’t even handle water, and I didn’t enjoy food. Now, my body has improved significantly, and everyone who sees me notices it and tells me that even my face looks good and not skinny anymore.",
       },
       8: {
-        name: "Dina Khaled Ahmed",
+        name: "Sabra Abdelsalam",
         review:
-          "Dr. Shorouq, I honestly can’t find the words to describe the follow-up with her . I lost about 4 kilograms in a month, but those 4 kilograms feel like 8 because the difference in body measurements is significant. I’ve almost returned to my usual weight, and all my clothes fit better than before . Moreover, my health has improved a lot, as confirmed by my endocrinologist. I haven’t felt dizzy, weak, or had cravings for food. I’ve been following her plan without feeling deprived, as it’s well-balanced, even allowing for chocolate and coffee, which I can’t live without . I also appreciate that she focuses on addressing the health issues of her clients, which was the reason I chose her in the first place.",
+          "I lost 38 kilograms with Dr. Shorouk. I started at 95 kilograms and reached 57 kilograms in 8 months, thank God. The fat on my liver completely disappeared, and the plan didn’t involve any deprivation of anything. There was a significant change in my body measurements, thanks to God and then to Dr. Shorouk.",
       },
       9: {
         name: "Esraa Mohamed Nagati",
         review:
-          "The follow-up has been excellent, and Dr. Shorouq is truly amazing. I've noticed a significant improvement in my health. The most remarkable changes I've observed are that my hair loss has decreased a bit, my skin has improved, and my lips have also become a bit pinker.",
+          "Dr. Shorouk is one of the kindest doctors I’ve ever worked with. She knows her field very well. The meal plan was great, and everything was healthy and didn’t upset my stomach. There was also no pressure to eat specific foods. I gained 6 kilograms in two months, even while breastfeeding. I also noticed that my hair fall completely stopped, my skin improved, and my lips became naturally rosy.",
       },
       10: {
         name: "Hanin Hamdy",
@@ -163,12 +163,12 @@ const homePageTranslations = {
       11: {
         name: "Zenab Saed",
         review:
-          "I lost 18.5 kilograms with Dr. Shorouq. Before starting the follow-up, I had a significant issue with my back, and that problem has been resolved by about 95% after the follow- up. There has been an incredible change in my measurements, and now I can wear whatever I want.",
+          "I lost 20.5 kilograms with Dr. Shorouk. Before starting the program, I had a major issue with my back, and that problem improved by 95% after following the plan. There was a remarkable change in my measurements, and now I can wear whatever I want.",
       },
       12: {
         name: "Doua Ahmed",
         review:
-          "I am a patient with insulin resistance and fatty liver, and I lost 14.5 kilograms with Dr.Shorouq quite easily. Before the follow-up, I was very lethargic, but now my energy has increased, and I can move around easily.",
+          "I am a patient with insulin resistance and fatty liver. I lost 17 kilograms with Dr. Shorouk effortlessly and comfortably. The meal plans were flexible, convenient, and included all the foods I love. Before starting, I used to feel very lethargic, but now my energy has increased, I move easily, and I’ve recovered from fatty liver. My insulin resistance has also disappeared, as confirmed by my internal medicine doctor.",
       },
       13: {
         name: "Doha Fawzy",
@@ -178,12 +178,37 @@ const homePageTranslations = {
       14: {
         name: "Nourhan Mansour",
         review:
-          "Dr. Shorouq is one of the sweetest doctors I’ve worked with. She understands her work very well and knows exactly what she’s doing. The daily follow-ups, care, and prompt responses to questions are invaluable. I’ll never forget a day when I was feeling down; she stayed with me and didn’t leave until I felt better. May God reward her with all the good . I gained about 6 kilograms in two months, and this is also because I’m breastfeeding, which I never expected would lead to weight gain. I had lost hope of ever gaining weight while breastfeeding, but thank God .",
+          "I have polycystic ovary syndrome (PCOS) and irritable bowel syndrome (IBS), and my problem was that I couldn’t eat properly and always had to take medication to regulate my period. Dr. Shorouk’s plan opened up my appetite for food and even helped me organize my daily routine. I gained about 7 kilograms with her, which is a number I had never reached before. I had tried many diets, but no one managed to help me achieve this except Dr. Shorouk. Everyone around me noticed the change in my body shape, and the weight gain was very balanced. The plan didn’t involve any pressure to eat specific foods, and my appetite improved significantly. Even when I stopped following the plan for three months, I didn’t lose any weight and remained stable, which is honestly an achievement ♥️. Thank God, my period is now regular without the medication I used to take. The follow-up with her was truly wonderful and comfortable. She addressed all my issues, not just the diet, and she pays attention to everything I tell her ♥️.",
       },
       15: {
         name: "Alaa Hamdy",
         review:
           "I would like to thank you for your care and the doctor’s attention throughout these 6 months. I reached my goal that I have been trying to achieve for years, and I have set a new goal that we will reach together, God willing. The doctor was very comforting, and this period has been pleasant; this is the most important achievement I’ve made in 2024 🥹🥹🥹🥹🥹.",
+      },
+      16: {
+        name: "Shimaa Ismail",
+        review:
+          "Before starting with Dr. Shorouk, I tried a lot on my own and visited many doctors, but I never saw results. When I started with Dr. Shorouk, I lost 25 kilograms in about six months. After losing the weight, my body felt much lighter, and moving became easier. And the thing that makes any girl happy—I can now go anywhere and buy the clothes I want.",
+      },
+      17: {
+        name: "Mawada Eid",
+        review:
+          "I had a stomach infection and acid reflux. I couldn’t tolerate any food at all, and my appetite was zero. After following the nutrition plan with Dr. Shorouk, everything changed. My stomach improved, my appetite greatly increased, even my skin got better, and my hair became longer and thicker. I gained 20 kilograms, going from 43 kilograms to 63 kilograms.",
+      },
+      18: {
+        name: "Amira Al-Roby",
+        review:
+          "I was 43 kilograms and reached 53 kilograms with Dr. Shorouk’s follow-up. The thing I liked the most was that Dr. Shorouk first got to know everything about me and my health through tests. The meal plans were also varied... there were so many options and alternatives available to me. I never ate anything against my will, nor did I eat large quantities that would make me uncomfortable.",
+      },
+      19: {
+        name: "Eman Mohammed Ali",
+        review:
+          "I have ulcerative colitis, and thank God, after following up with Dr. Shorouk, I was able to gain 6 kilograms in 3 months. May God reward Dr. Shorouk for all her efforts with me. She truly lived up to my trust, even though I was initially scared of the online experience. Honestly, she is better than any nutritionist I’ve followed. She really cared about creating a plan that suited my condition, not just a generic one. I feel much better now, thank God, thanks to God and Dr. Shorouk.",
+      },
+      20: {
+        name: "Esraa Abdeldayem",
+        review:
+          "I am a Type 1 diabetic and have been struggling with being underweight. Since I started the tests and taking the supplements, I noticed improvement. My body started adjusting to the meals, my blood sugar levels stabilized, and I gained 2 kilograms in the first two weeks of following up with Dr. Shorouk, thank God. I am still continuing with her until I reach my goal.",
       },
     },
   },

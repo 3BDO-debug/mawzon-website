@@ -23,6 +23,7 @@ import useLocales from "@/hooks/useLocales";
 // -----------------------------------------------------------------
 
 const ReviewCard = ({ category, review, avatar, name, index, role }) => {
+  const { currentLang } = useLocales();
   return (
     <Box sx={{ px: 5, py: 3 }}>
       <Paper
@@ -59,6 +60,7 @@ const ReviewCard = ({ category, review, avatar, name, index, role }) => {
                 overflow: "hidden",
                 WebkitBoxOrient: "vertical",
                 WebkitLineClamp: 5,
+                direction: currentLang.value === "ar" ? "rtl" : "ltr",
               }}
             >
               {review}
@@ -110,7 +112,7 @@ function Reviews() {
 
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const totalSlides = 15; // Total number of slides
+  const totalSlides = 20; // Total number of slides
   const slidesToShow = isMobile ? 1 : 3; // Number of slides shown in the carousel
 
   const settings = {
@@ -295,6 +297,61 @@ function Reviews() {
       avatar: "avatars/avatar15.jpg",
       name: translate(
         "pagesTranslations.homePageTranslations.reviews.reviewsData.15.name"
+      ),
+      role: "",
+    },
+    {
+      category: "",
+      review: translate(
+        "pagesTranslations.homePageTranslations.reviews.reviewsData.16.review"
+      ),
+      avatar: "avatars/avatar2.jpg",
+      name: translate(
+        "pagesTranslations.homePageTranslations.reviews.reviewsData.16.name"
+      ),
+      role: "",
+    },
+    {
+      category: "",
+      review: translate(
+        "pagesTranslations.homePageTranslations.reviews.reviewsData.17.review"
+      ),
+      avatar: "avatars/avatar4.jpg",
+      name: translate(
+        "pagesTranslations.homePageTranslations.reviews.reviewsData.17.name"
+      ),
+      role: "",
+    },
+    {
+      category: "",
+      review: translate(
+        "pagesTranslations.homePageTranslations.reviews.reviewsData.18.review"
+      ),
+      avatar: "avatars/avatar6.jpg",
+      name: translate(
+        "pagesTranslations.homePageTranslations.reviews.reviewsData.18.name"
+      ),
+      role: "",
+    },
+    {
+      category: "",
+      review: translate(
+        "pagesTranslations.homePageTranslations.reviews.reviewsData.19.review"
+      ),
+      avatar: "avatars/avatar8.jpg",
+      name: translate(
+        "pagesTranslations.homePageTranslations.reviews.reviewsData.19.name"
+      ),
+      role: "",
+    },
+    {
+      category: "",
+      review: translate(
+        "pagesTranslations.homePageTranslations.reviews.reviewsData.20.review"
+      ),
+      avatar: "avatars/avatar13.jpg",
+      name: translate(
+        "pagesTranslations.homePageTranslations.reviews.reviewsData.20.name"
       ),
       role: "",
     },
