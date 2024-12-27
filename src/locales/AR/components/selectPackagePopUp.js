@@ -12,6 +12,19 @@ const selectPackage = {
     phoneNumber: "رقم الهاتف",
     email: "البريد الإلكتروني",
   },
+  paymentOptions: {
+    title: "خيارات الدفع",
+    bank: "بطاقة بنكية",
+    instaPay: "إنستا باي",
+    vodafone: "فودافون كاش",
+    description: {
+      part1: "يرجى إرسال",
+      part2: "إلى",
+      part3: "عبر",
+      part4:
+        "بعد تحويل المبلغ يرجى إرسال لقطة شاشة لتأكيد التحويل إلى رقم الواتساب هذا",
+    },
+  },
 };
 
 export default selectPackage;

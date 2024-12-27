@@ -26,13 +26,15 @@ import { personalTrainingRequester } from "@/__apis__/personalTraining";
 import { useSetRecoilState } from "recoil";
 // atoms
 import alertAtom from "@/recoil/atoms/alertAtom";
-import { selectPackagePopUpAtom, themeModeAtom } from "@/recoil";
+import { selectPackagePopUpAtom } from "@/recoil";
+import userIpRegionAtom from "@/recoil/atoms/userIpRegionAtom";
 // components
 import Iconify from "../Iconify";
 import GeneralInfo from "./GeneralInfo";
 import PaymentInfo from "./PaymentInfo";
 import { LoadingButton } from "@mui/lab";
 import useLocales from "@/hooks/useLocales";
+import PaymentOptions from "./PaymentOptions";
 
 // -------------------------------------------------------------------------------
 
@@ -59,6 +61,7 @@ function SelectPackagePopUp() {
       duration: "",
       price: "",
       region: "",
+      paymentMethod: "",
       // cardHolderName: "",
       // cardNumber: "",
       // expirationDate: "",
@@ -89,17 +92,21 @@ function SelectPackagePopUp() {
     onSubmit: async (values, { resetForm }) => {
       await personalTrainingRequester(values)
         .then((response) => {
-          // console.log("fffff", response.redirect_url);
           triggerAlert({
             triggered: true,
             type: "success",
             message: "Your request has been submitted successfully",
           });
-          window.location.href = response.redirect_url;
+          if (values.paymentMethod === "card") {
+            window.location.href = response.redirect_url;
+          }
+          setPopUp({ isTriggered: false });
           resetForm();
           setActiveStep(0);
         })
         .catch((error) => {
+          console.log("rrr", error);
+
           triggerAlert({
             triggered: true,
             type: "error",
@@ -133,17 +140,19 @@ function SelectPackagePopUp() {
           />
         ),
       },
-      // {
-      //   label: "Payment Info",
-      //   value: 1,
-      //   component: <PaymentInfo formik={formik} />,
-      //   icon: (
-      //     <Iconify
-      //       sx={{ width: 25, height: 25 }}
-      //       icon="majesticons:creditcard-line"
-      //     />
-      //   ),
-      // },
+      {
+        label: translate(
+          "componentsTranslations.selectPackage.paymentOptions.title"
+        ),
+        value: 1,
+        component: <PaymentOptions formik={formik} />,
+        icon: (
+          <Iconify
+            sx={{ width: 25, height: 25 }}
+            icon="majesticons:creditcard-line"
+          />
+        ),
+      },
     ];
   }, [formik]);
 
@@ -162,7 +171,7 @@ function SelectPackagePopUp() {
   }, []);
 
   return (
-    <Dialog open={popUp.isTriggered} onClose={handleClosePopUp} fullWidth>
+    <Dialog open={popUp.isTriggered} onClose={handleClosePopUp} maxWidth="md">
       <DialogTitle>
         {translate("componentsTranslations.selectPackage.title")} {popUp?.title}
       </DialogTitle>
@@ -173,8 +182,16 @@ function SelectPackagePopUp() {
               <Stepper activeStep={activeStep}>
                 {renderSteps().map((step, index) => (
                   <Step key={index}>
-                    <StepLabel icon={step.icon}>
-                      <Typography variant="subtitle1">{step.label}</Typography>
+                    <StepLabel
+                      icon={step.icon}
+                      sx={{ color: activeStep === index && "primary.main" }}
+                    >
+                      <Typography
+                        color={activeStep === index && "primary.main"}
+                        variant="subtitle1"
+                      >
+                        {step.label}
+                      </Typography>
                     </StepLabel>
                   </Step>
                 ))}
@@ -197,7 +214,16 @@ function SelectPackagePopUp() {
           <Button
             variant="outlined"
             onClick={handlePrevStep}
-            startIcon={<Iconify icon="solar:alt-arrow-left-broken" />}
+            startIcon={
+              <Iconify
+                icon="solar:alt-arrow-left-broken"
+                sx={{
+                  ml: currentLang.value === "ar" ? 1 : 0,
+                  transform:
+                    currentLang.value === "ar" ? "rotate(180deg)" : "none",
+                }}
+              />
+            }
           >
             {translate(
               "componentsTranslations.selectPackage.actionButtons.back"
@@ -205,39 +231,49 @@ function SelectPackagePopUp() {
           </Button>
         )}
 
-        {/* {activeStep === 0 ? (
+        {activeStep === 0 ? (
           <Button
+            sx={{ mr: currentLang.value === "ar" ? 1 : 0 }}
             onClick={handleNextStep}
             variant="contained"
-            endIcon={<Iconify icon="solar:alt-arrow-right-broken" />}
+            endIcon={
+              <Iconify
+                icon="solar:alt-arrow-right-broken"
+                sx={{
+                  mr: currentLang.value === "ar" ? 1 : 0,
+                  transform:
+                    currentLang.value === "ar" ? "rotate(180deg)" : "none",
+                }}
+              />
+            }
           >
-              {translate(
+            {translate(
               "componentsTranslations.selectPackage.actionButtons.next"
             )}
           </Button>
-        ) : ( */}
-        <LoadingButton
-          sx={{ mr: currentLang.value === "ar" ? 1 : 0 }}
-          onClick={handleSubmit}
-          disabled={!dirty}
-          loading={isSubmitting}
-          variant="contained"
-          endIcon={
-            <Iconify
-              icon="solar:map-arrow-right-broken"
-              sx={{
-                mr: currentLang.value === "ar" ? 1 : 0,
-                transform:
-                  currentLang.value === "ar" ? "rotate(180deg)" : "none",
-              }}
-            />
-          }
-        >
-          {translate(
-            "componentsTranslations.selectPackage.actionButtons.submit"
-          )}
-        </LoadingButton>
-        {/* )} */}
+        ) : (
+          <LoadingButton
+            sx={{ mr: currentLang.value === "ar" ? 1 : 0 }}
+            onClick={handleSubmit}
+            disabled={!dirty || values.paymentMethod === ""}
+            loading={isSubmitting}
+            variant="contained"
+            endIcon={
+              <Iconify
+                icon="solar:map-arrow-right-broken"
+                sx={{
+                  mr: currentLang.value === "ar" ? 1 : 0,
+                  transform:
+                    currentLang.value === "ar" ? "rotate(180deg)" : "none",
+                }}
+              />
+            }
+          >
+            {translate(
+              "componentsTranslations.selectPackage.actionButtons.submit"
+            )}
+          </LoadingButton>
+        )}
       </DialogActions>
     </Dialog>
   );
