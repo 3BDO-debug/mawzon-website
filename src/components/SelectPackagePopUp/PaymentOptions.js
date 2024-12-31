@@ -39,6 +39,7 @@ function PaymentOptions({ formik }) {
             boxShadow: 20,
             border: 2,
             borderColor: paymentMethod === "card" ? "primary.main" : "grey.0",
+            cursor: "pointer",
           }}
           onClick={() => setPaymentMethod("card")}
         >
@@ -65,6 +66,7 @@ function PaymentOptions({ formik }) {
             border: 2,
             borderColor:
               paymentMethod === "instaPay" ? "primary.main" : "grey.0",
+            cursor: "pointer",
           }}
           onClick={() => setPaymentMethod("instaPay")}
         >
@@ -91,6 +93,7 @@ function PaymentOptions({ formik }) {
             border: 2,
             borderColor:
               paymentMethod === "vodafone" ? "primary.main" : "grey.0",
+            cursor: "pointer",
           }}
           onClick={() => setPaymentMethod("vodafone")}
         >
@@ -151,7 +154,7 @@ function PaymentOptions({ formik }) {
                 {translate(
                   "componentsTranslations.selectPackage.paymentOptions.description.part2"
                 )}{" "}
-                01032239979{" "}
+                {paymentMethod === "instaPay" ? "01064057657" : "01093239931"}{" "}
                 {translate(
                   "componentsTranslations.selectPackage.paymentOptions.description.part3"
                 )}{" "}
