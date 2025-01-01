@@ -1,8 +1,8 @@
 import axios from "axios";
 
-// http://127.0.0.1:8000 ---33----3gitxx
+// http://127.0.0.1:8000 
 
-export const mainUrl = "http://127.0.0.1:8000/";
+export const mainUrl = "https://mawzon.pythonanywhere.com/";
 
 const axiosInstance = axios.create({
   baseURL: mainUrl,
