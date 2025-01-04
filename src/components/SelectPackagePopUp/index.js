@@ -236,6 +236,12 @@ function SelectPackagePopUp() {
             sx={{ mr: currentLang.value === "ar" ? 1 : 0 }}
             onClick={handleNextStep}
             variant="contained"
+            disabled={
+              values.email === "" ||
+              values.fullName === "" ||
+              values.phoneNumber === "" ||
+              errors.email
+            }
             endIcon={
               <Iconify
                 icon="solar:alt-arrow-right-broken"
@@ -255,7 +261,7 @@ function SelectPackagePopUp() {
           <LoadingButton
             sx={{ mr: currentLang.value === "ar" ? 1 : 0 }}
             onClick={handleSubmit}
-            disabled={!dirty || values.paymentMethod === ""}
+            disabled={values.paymentMethod === ""}
             loading={isSubmitting}
             variant="contained"
             endIcon={
