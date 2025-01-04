@@ -32,12 +32,13 @@ function PlanCard({
   description,
   featuresList,
   type,
+  hidden,
 }) {
   const theme = useTheme();
 
   const triggerSelectPackagePopUp = useSetRecoilState(selectPackagePopUpAtom);
 
-  const { translate } = useLocales();
+  const { translate, currentLang } = useLocales();
 
   const userIpRegion = useRecoilValue(userIpRegionAtom);
 
@@ -66,7 +67,7 @@ function PlanCard({
             <Typography variant="body2">{description}</Typography>
           </Box>
           <Box sx={{ backgroundColor: "grey.400", width: "70%", height: 2 }} />
-          <Box>
+          <Box sx={{ filter: hidden ? "blur(10px)" : "blur(0px)" }}>
             <Stack direction="row" gap={0.5} alignItems="center">
               <Typography variant="h3">
                 {price} {userIpRegion === "EG" ? "EGP" : "USD"}
@@ -74,7 +75,7 @@ function PlanCard({
             </Stack>
           </Box>
           {/* Features */}
-          <Stack gap={3}>
+          <Stack gap={3} sx={{ filter: hidden ? "blur(10px)" : "blur(0px)" }}>
             {featuresList.map((_, index) => (
               <Grid container spacing={1} alignItems="center" key={index}>
                 <Grid item xs={1.5}>
@@ -104,22 +105,32 @@ function PlanCard({
               </Grid>
             ))}
           </Stack>
-          <Button
-            sx={{ alignSelf: "center", width: "50%", mt: 6 }}
-            variant="contained"
-            onClick={() => {
-              triggerSelectPackagePopUp({
-                isTriggered: true,
-                title: title,
-                price: price,
-                duration: duration,
-                description: description,
-                region: userIpRegion,
-              });
-            }}
-          >
-            {translate("componentsTranslations.plans.selectPLan")}
-          </Button>
+          {hidden ? (
+            <Button
+              sx={{ alignSelf: "center", width: "50%", mt: 6 }}
+              variant="contained"
+              disabled={true}
+            >
+              {currentLang.value === "ar" ? "قريبا !" : "Coming soon !"}
+            </Button>
+          ) : (
+            <Button
+              sx={{ alignSelf: "center", width: "50%", mt: 6 }}
+              variant="contained"
+              onClick={() => {
+                triggerSelectPackagePopUp({
+                  isTriggered: true,
+                  title: title,
+                  price: price,
+                  duration: duration,
+                  description: description,
+                  region: userIpRegion,
+                });
+              }}
+            >
+              {translate("componentsTranslations.plans.selectPLan")}
+            </Button>
+          )}
         </Stack>
       </Paper>
     </Box>

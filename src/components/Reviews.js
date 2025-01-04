@@ -358,7 +358,7 @@ function Reviews() {
   ];
 
   return (
-    <Box sx={{ width: "100%", py: 10, bgcolor: "#b0eae3", mt: 5 }}>
+    <Box sx={{ py: 10, bgcolor: "#b0eae3", mt: 5 }}>
       <Grid container>
         <Grid item xs={12}>
           <Stack direction="row" justifyContent="center">
@@ -389,21 +389,19 @@ function Reviews() {
             )}
           </Typography>
         </Grid>
-        <Grid item xs={12}>
-          <Box>
-            <Slider ref={carouselRef} {...settings}>
-              {reviewData.map((data, index) => (
-                <ReviewCard
-                  key={index}
-                  category={data.category}
-                  review={data.review}
-                  avatar={data.avatar}
-                  name={data.name}
-                  role={data.role}
-                />
-              ))}
-            </Slider>
-          </Box>
+        <Grid item xs={12} style={{ overflow: "hidden" }}>
+          <Slider ref={carouselRef} {...settings}>
+            {reviewData.map((data, index) => (
+              <ReviewCard
+                key={index}
+                category={data.category}
+                review={data.review}
+                avatar={data.avatar}
+                name={data.name}
+                role={data.role}
+              />
+            ))}
+          </Slider>
         </Grid>
         <Grid item xs={12}>
           <Stack

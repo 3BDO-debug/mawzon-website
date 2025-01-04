@@ -33,8 +33,8 @@ function AboutUsHook() {
         sx={{
           position: "absolute",
           width: "100%",
-          left: { xs: 0, xl: "10%" },
-          right: { xs: 0, xl: "10%" },
+          // left: { xs: 0, xl: "10%" },
+          // right: { xs: 0, xl: "10%" },
           top:
             currentLang.value === "ar"
               ? { xs: "-60%", sm: "-100%" }
@@ -46,7 +46,7 @@ function AboutUsHook() {
           src={tearingPaper}
           style={{ filter: themeMode.mode === "dark" && "invert(0.891)" }}
           objectFit="cover"
-          width="100%"
+          width={2500}
           height={250}
           alt="tearing-paper"
         />
