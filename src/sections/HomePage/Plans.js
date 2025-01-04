@@ -39,19 +39,21 @@ function Plans() {
       if (selectedDuration === "1-month") {
         setEcoPrice("500");
         setSilverPrice("800");
+        setGoldenPrice("1200");
       } else if (selectedDuration === "3-months") {
-        setEcoPrice("1300");
+        setEcoPrice("1250");
         setSilverPrice("2000");
-        setGoldenPrice("3500");
+        setGoldenPrice("3000");
       }
     } else if (userIpRegion !== "EG") {
       if (selectedDuration === "1-month") {
-        setEcoPrice("30");
-        setSilverPrice("50");
+        setEcoPrice("25");
+        setSilverPrice("40");
+        setGoldenPrice("60");
       } else if (selectedDuration === "3-months") {
-        setEcoPrice("75");
-        setSilverPrice("120");
-        setGoldenPrice("200");
+        setEcoPrice("60");
+        setSilverPrice("100");
+        setGoldenPrice("150");
       }
     }
   }, [userIpRegion, selectedDuration]);
@@ -254,55 +256,57 @@ function Plans() {
                       isFeatured
                       duration={selectedDuration}
                       type="silver"
+                      hidden={true}
                     />
                   </Grid>
-                  {selectedDuration === "3-months" && (
-                    <Grid item xs={12} md={4}>
-                      <PlanCard
-                        title={translate(
-                          "componentsTranslations.plans.plan3.title"
-                        )}
-                        description={translate(
-                          "componentsTranslations.plans.plan3.planDescription"
-                        )}
-                        featuresList={[
-                          translate(
-                            "componentsTranslations.plans.plan3.featuresList.1"
-                          ),
-                          translate(
-                            "componentsTranslations.plans.plan3.featuresList.2"
-                          ),
-                          translate(
-                            "componentsTranslations.plans.plan3.featuresList.3"
-                          ),
-                          translate(
-                            "componentsTranslations.plans.plan3.featuresList.4"
-                          ),
-                          translate(
-                            "componentsTranslations.plans.plan3.featuresList.5"
-                          ),
-                          translate(
-                            "componentsTranslations.plans.plan3.featuresList.6"
-                          ),
-                          translate(
-                            "componentsTranslations.plans.plan3.featuresList.7"
-                          ),
-                          translate(
-                            "componentsTranslations.plans.plan3.featuresList.8"
-                          ),
-                          translate(
-                            "componentsTranslations.plans.plan3.featuresList.9"
-                          ),
-                          translate(
-                            "componentsTranslations.plans.plan3.featuresList.10"
-                          ),
-                        ]}
-                        price={goldenPrice}
-                        duration={selectedDuration}
-                        type="golden"
-                      />
-                    </Grid>
-                  )}
+                  {/* {selectedDuration === "3-months" && ( */}
+                  <Grid item xs={12} md={4}>
+                    <PlanCard
+                      title={translate(
+                        "componentsTranslations.plans.plan3.title"
+                      )}
+                      description={translate(
+                        "componentsTranslations.plans.plan3.planDescription"
+                      )}
+                      featuresList={[
+                        translate(
+                          "componentsTranslations.plans.plan3.featuresList.1"
+                        ),
+                        translate(
+                          "componentsTranslations.plans.plan3.featuresList.2"
+                        ),
+                        translate(
+                          "componentsTranslations.plans.plan3.featuresList.3"
+                        ),
+                        translate(
+                          "componentsTranslations.plans.plan3.featuresList.4"
+                        ),
+                        translate(
+                          "componentsTranslations.plans.plan3.featuresList.5"
+                        ),
+                        translate(
+                          "componentsTranslations.plans.plan3.featuresList.6"
+                        ),
+                        translate(
+                          "componentsTranslations.plans.plan3.featuresList.7"
+                        ),
+                        translate(
+                          "componentsTranslations.plans.plan3.featuresList.8"
+                        ),
+                        translate(
+                          "componentsTranslations.plans.plan3.featuresList.9"
+                        ),
+                        translate(
+                          "componentsTranslations.plans.plan3.featuresList.10"
+                        ),
+                      ]}
+                      price={goldenPrice}
+                      duration={selectedDuration}
+                      type="golden"
+                      hidden={true}
+                    />
+                  </Grid>
+                  {/* )} */}
                 </Grid>
               </Stack>
             </Grid>

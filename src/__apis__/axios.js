@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// http://127.0.0.1:8000 
+// http://127.0.0.1:8000   https://mawzon.pythonanywhere.com/
 
 export const mainUrl = "https://mawzon.pythonanywhere.com/";
 

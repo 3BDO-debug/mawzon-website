@@ -17,7 +17,6 @@ export const defaultSettings = {
   themeDirection: "ltr",
 };
 
-
 // MULTI LANGUAGES
 // Please remove `localStorage` when you change settings.
 // ----------------------------------------------------------------------
@@ -37,4 +36,4 @@ export const allLangs = [
   },
 ];
 
-export const defaultLang = allLangs[0]; // English
+export const defaultLang = allLangs[1]; // Arabic
