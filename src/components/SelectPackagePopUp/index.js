@@ -70,9 +70,9 @@ function SelectPackagePopUp() {
     validationSchema: Yup.object({
       fullName: Yup.string().required("Full name is required"),
       phoneNumber: Yup.string().required("Whatsapp number is required"),
-      email: Yup.string()
-        .email("Invalid email address")
-        .required("Email is required"),
+      // email: Yup.string()
+      //   .email("Invalid email address")
+      //   .required("Email is required"),
       // cardHolderName: Yup.string()
       //   .required("Cardholder name is required")
       //   .matches(/^[a-zA-Z\s]+$/, "Name can only contain letters"),
@@ -236,12 +236,7 @@ function SelectPackagePopUp() {
             sx={{ mr: currentLang.value === "ar" ? 1 : 0 }}
             onClick={handleNextStep}
             variant="contained"
-            disabled={
-              values.email === "" ||
-              values.fullName === "" ||
-              values.phoneNumber === "" ||
-              errors.email
-            }
+            disabled={values.fullName === "" || values.phoneNumber === ""}
             endIcon={
               <Iconify
                 icon="solar:alt-arrow-right-broken"

@@ -303,7 +303,7 @@ function Plans() {
                       price={goldenPrice}
                       duration={selectedDuration}
                       type="golden"
-                      hidden={true}
+                      // hidden={true}
                     />
                   </Grid>
                   {/* )} */}
