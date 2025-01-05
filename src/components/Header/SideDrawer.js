@@ -33,69 +33,69 @@ function SideDrawer({ isTriggered, closeHandler, links }) {
 
   return (
     <Drawer anchor="left" open={isTriggered} onClose={closeHandler}>
-      <Stack justifyContent="space-between" sx={{ py: 3, px: 4, flex: 1 }}>
+      <Stack sx={{ py: 3, px: 4, flex: 1 }}>
         {/* Logo */}
         <Box>
           <Logo />
-          <Stack gap={2} sx={{ mt: 12 }}>
+          {/* Social links */}
+          <Stack direction="row" alignItems="center" gap={2} sx={{ mt: 5 }}>
+            <Box
+              onClick={() => {
+                window.open("https://www.instagram.com/dr_shrouk_ali/");
+              }}
+              component={motion.div}
+              variants={bubbleVariants}
+              initial="initial"
+              whileHover="hover"
+              whileTap="tap"
+              sx={{ cursor: "pointer" }}
+            >
+              <Iconify
+                icon="skill-icons:instagram"
+                sx={{ width: 25, height: 25, color: theme.palette.grey[600] }}
+              />
+            </Box>
+            <Box
+              onClick={() => {
+                window.open("https://www.facebook.com/DrShroukAli/");
+              }}
+              component={motion.div}
+              variants={bubbleVariants}
+              initial="initial"
+              whileHover="hover"
+              whileTap="tap"
+              sx={{ cursor: "pointer" }}
+            >
+              <Iconify
+                icon="logos:facebook"
+                sx={{ width: 25, height: 25, color: theme.palette.grey[600] }}
+              />
+            </Box>
+            <Box
+              onClick={() => {
+                window.open(
+                  "https://www.tiktok.com/@dr_shrouk_ali?_t=8pHkI45ew8g&_r=1"
+                );
+              }}
+              component={motion.div}
+              variants={bubbleVariants}
+              initial="initial"
+              whileHover="hover"
+              whileTap="tap"
+              sx={{ cursor: "pointer" }}
+            >
+              <Iconify
+                icon="logos:tiktok-icon"
+                sx={{ width: 25, height: 25, color: theme.palette.grey[600] }}
+              />
+            </Box>
+          </Stack>
+          <Stack gap={2} sx={{ mt: 5 }}>
             {links.map((link, index) => (
               <HeaderLink data={link} key={index} />
             ))}
           </Stack>
         </Box>
-        {/* Social links */}
-        <Stack direction="row" alignItems="center" gap={2}>
-          <Box
-            onClick={() => {
-              window.open("https://www.instagram.com/dr_shrouk_ali/");
-            }}
-            component={motion.div}
-            variants={bubbleVariants}
-            initial="initial"
-            whileHover="hover"
-            whileTap="tap"
-            sx={{ cursor: "pointer" }}
-          >
-            <Iconify
-              icon="skill-icons:instagram"
-              sx={{ width: 25, height: 25, color: theme.palette.grey[600] }}
-            />
-          </Box>
-          <Box
-            onClick={() => {
-              window.open("https://www.facebook.com/DrShroukAli/");
-            }}
-            component={motion.div}
-            variants={bubbleVariants}
-            initial="initial"
-            whileHover="hover"
-            whileTap="tap"
-            sx={{ cursor: "pointer" }}
-          >
-            <Iconify
-              icon="logos:facebook"
-              sx={{ width: 25, height: 25, color: theme.palette.grey[600] }}
-            />
-          </Box>
-          <Box
-            onClick={() => {
-              window.open(
-                "https://www.tiktok.com/@dr_shrouk_ali?_t=8pHkI45ew8g&_r=1"
-              );
-            }}
-            component={motion.div}
-            variants={bubbleVariants}
-            initial="initial"
-            whileHover="hover"
-            whileTap="tap"
-            sx={{ cursor: "pointer" }}
-          >
-            <Iconify
-              icon="logos:tiktok-icon"
-              sx={{ width: 25, height: 25, color: theme.palette.grey[600] }}
-            />
-          </Box>
-        </Stack>
       </Stack>
     </Drawer>
   );
