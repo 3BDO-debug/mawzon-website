@@ -19,7 +19,7 @@ const { persistAtom } = recoilPersist({
 const themeModeAtom = atom({
   key: "themeMode",
   default: {
-    direction: "ltr",
+    direction: "rtl",
     mode: "light",
   },
   effects_UNSTABLE: [persistAtom],
