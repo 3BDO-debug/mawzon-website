@@ -40,6 +40,7 @@ function ThemeProvider({ children }) {
 
   useEffect(() => {
     document.documentElement.dir = themeMode.direction;
+    localStorage.removeItem("recoil-presist");
   }, [themeMode.direction]);
 
   return (

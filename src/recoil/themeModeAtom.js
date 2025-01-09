@@ -22,7 +22,6 @@ const themeModeAtom = atom({
     direction: "rtl",
     mode: "light",
   },
-  effects_UNSTABLE: [persistAtom],
 });
 
 export default themeModeAtom;
