@@ -24,6 +24,9 @@ function PaymentOptions({ formik }) {
   const [paymentMethod, setPaymentMethod] = useState("");
 
   useEffect(() => {
+    if (userIpRegion !== "EG") {
+      setPaymentMethod("card");
+    }
     setFieldValue("paymentMethod", paymentMethod);
   }, [paymentMethod]);
 
@@ -33,7 +36,7 @@ function PaymentOptions({ formik }) {
 
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12} md={4}>
+      <Grid item xs={12} md={userIpRegion !== "EG" ? 12 : 4}>
         <Card
           sx={{
             boxShadow: 20,
@@ -59,60 +62,64 @@ function PaymentOptions({ formik }) {
           </CardContent>
         </Card>
       </Grid>
-      <Grid item xs={12} md={4}>
-        <Card
-          sx={{
-            boxShadow: 20,
-            border: 2,
-            borderColor:
-              paymentMethod === "instaPay" ? "primary.main" : "grey.0",
-            cursor: "pointer",
-          }}
-          onClick={() => setPaymentMethod("instaPay")}
-        >
-          <CardContent>
-            <Stack direction="row" alignItems="center" gap={1}>
-              <Iconify
-                sx={{ fontSize: 30 }}
-                icon="arcticons:instapay"
-                color="#481470"
-              />
-              <Typography variant="subtitle1">
-                {translate(
-                  "componentsTranslations.selectPackage.paymentOptions.instaPay"
-                )}
-              </Typography>
-            </Stack>
-          </CardContent>
-        </Card>
-      </Grid>
-      <Grid item xs={12} md={4}>
-        <Card
-          sx={{
-            boxShadow: 20,
-            border: 2,
-            borderColor:
-              paymentMethod === "vodafone" ? "primary.main" : "grey.0",
-            cursor: "pointer",
-          }}
-          onClick={() => setPaymentMethod("vodafone")}
-        >
-          <CardContent>
-            <Stack direction="row" alignItems="center" gap={1}>
-              <Iconify
-                sx={{ fontSize: 30 }}
-                icon="simple-icons:vodafone"
-                color="error.main"
-              />
-              <Typography variant="subtitle1">
-                {translate(
-                  "componentsTranslations.selectPackage.paymentOptions.vodafone"
-                )}
-              </Typography>
-            </Stack>
-          </CardContent>
-        </Card>
-      </Grid>
+      {userIpRegion === "EG" && (
+        <>
+          <Grid item xs={12} md={4}>
+            <Card
+              sx={{
+                boxShadow: 20,
+                border: 2,
+                borderColor:
+                  paymentMethod === "instaPay" ? "primary.main" : "grey.0",
+                cursor: "pointer",
+              }}
+              onClick={() => setPaymentMethod("instaPay")}
+            >
+              <CardContent>
+                <Stack direction="row" alignItems="center" gap={1}>
+                  <Iconify
+                    sx={{ fontSize: 30 }}
+                    icon="arcticons:instapay"
+                    color="#481470"
+                  />
+                  <Typography variant="subtitle1">
+                    {translate(
+                      "componentsTranslations.selectPackage.paymentOptions.instaPay"
+                    )}
+                  </Typography>
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Card
+              sx={{
+                boxShadow: 20,
+                border: 2,
+                borderColor:
+                  paymentMethod === "vodafone" ? "primary.main" : "grey.0",
+                cursor: "pointer",
+              }}
+              onClick={() => setPaymentMethod("vodafone")}
+            >
+              <CardContent>
+                <Stack direction="row" alignItems="center" gap={1}>
+                  <Iconify
+                    sx={{ fontSize: 30 }}
+                    icon="simple-icons:vodafone"
+                    color="error.main"
+                  />
+                  <Typography variant="subtitle1">
+                    {translate(
+                      "componentsTranslations.selectPackage.paymentOptions.vodafone"
+                    )}
+                  </Typography>
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+        </>
+      )}
       <Grid item xs={12}>
         {(paymentMethod === "instaPay" || paymentMethod === "vodafone") && (
           <Card sx={{ boxShadow: 20 }}>
