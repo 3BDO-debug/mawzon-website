@@ -19,7 +19,6 @@ import { selectPackagePopUpAtom } from "@/recoil";
 import Label from "./Label";
 import Iconify from "./Iconify";
 import useLocales from "@/hooks/useLocales";
-import { color } from "framer-motion";
 import userIpRegionAtom from "@/recoil/atoms/userIpRegionAtom";
 
 // ------------------------------------------------------------------------
@@ -33,6 +32,8 @@ function PlanCard({
   featuresList,
   type,
   hidden,
+  relatedPackage,
+  relatedPackagePrice,
 }) {
   const theme = useTheme();
 
@@ -81,9 +82,9 @@ function PlanCard({
                 <Grid item xs={1.5}>
                   <Iconify
                     icon={
-                      (type !== "golden" && index === 4) ||
-                      (type === "eco" && index === 8) ||
-                      (type === "eco" && index === 2)
+                      (type !== "Golden Plan" && index === 4) ||
+                      (type === "ECO Plan" && index === 8) ||
+                      (type === "ECO Plan" && index === 2)
                         ? "ic:round-close"
                         : "material-symbols:check"
                     }
@@ -91,9 +92,9 @@ function PlanCard({
                       width: 25,
                       height: 25,
                       color:
-                        (type !== "golden" && index === 4) ||
-                        (type === "eco" && index === 8) ||
-                        (type === "eco" && index === 2)
+                        (type !== "Golden Plan" && index === 4) ||
+                        (type === "ECO Plan" && index === 8) ||
+                        (type === "ECO Plan" && index === 2)
                           ? "red"
                           : "green",
                     }}
@@ -125,6 +126,8 @@ function PlanCard({
                   duration: duration,
                   description: description,
                   region: userIpRegion,
+                  relatedPackage: relatedPackage,
+                  relatedPackagePrice: relatedPackagePrice,
                 });
               }}
             >

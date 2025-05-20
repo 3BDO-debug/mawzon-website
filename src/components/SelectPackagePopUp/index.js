@@ -21,7 +21,10 @@ import {
   Typography,
 } from "@mui/material";
 // __apis__
-import { personalTrainingRequester } from "@/__apis__/personalTraining";
+import {
+  createSubscriptionRequest,
+  personalTrainingRequester,
+} from "@/__apis__/personalTraining";
 // recoil
 import { useSetRecoilState } from "recoil";
 // atoms
@@ -58,39 +61,19 @@ function SelectPackagePopUp() {
       email: "",
       phoneNumber: "",
       planTitle: "",
-      duration: "",
       price: "",
       region: "",
       paymentMethod: "",
-      // cardHolderName: "",
-      // cardNumber: "",
-      // expirationDate: "",
-      // cvv: "",
     },
     validationSchema: Yup.object({
       fullName: Yup.string().required("Full name is required"),
       phoneNumber: Yup.string().required("Whatsapp number is required"),
-      // email: Yup.string()
-      //   .email("Invalid email address")
-      //   .required("Email is required"),
-      // cardHolderName: Yup.string()
-      //   .required("Cardholder name is required")
-      //   .matches(/^[a-zA-Z\s]+$/, "Name can only contain letters"),
-      // cardNumber: Yup.string()
-      //   .required("Card number is required")
-      //   .matches(/^\d{16}$/, "Card number must be 16 digits"),
-      // expirationDate: Yup.string()
-      //   .required("Expiration date is required")
-      //   .matches(
-      //     /^(0[1-9]|1[0-2])\/\d{2}$/,
-      //     "Expiration date must be in MM/YY format"
-      //   ),
-      // cvv: Yup.string()
-      //   .required("CVV is required")
-      //   .matches(/^\d{3,4}$/, "CVV must be 3 or 4 digits"),
     }),
-    onSubmit: async (values, { resetForm }) => {
-      await personalTrainingRequester(values)
+    onSubmit: async (values) => {
+      await personalTrainingRequester({
+        ...values,
+        duration: popUp.duration === 1 ? "1-month" : "3-months",
+      })
         .then((response) => {
           triggerAlert({
             triggered: true,
@@ -101,12 +84,11 @@ function SelectPackagePopUp() {
             window.location.href = response.redirect_url;
           }
           setPopUp({ isTriggered: false });
-          resetForm();
           setActiveStep(0);
+          createSubscription();
         })
         .catch((error) => {
           console.log("rrr", error);
-
           triggerAlert({
             triggered: true,
             type: "error",
@@ -116,8 +98,55 @@ function SelectPackagePopUp() {
     },
   });
 
-  const { handleSubmit, dirty, isSubmitting, values, setFieldValue, errors } =
-    formik;
+  const {
+    handleSubmit,
+    dirty,
+    isSubmitting,
+    values,
+    setFieldValue,
+    errors,
+    resetForm,
+  } = formik;
+
+  const createSubscription = useCallback(async () => {
+    const parts = values.fullName.trim().split(" ");
+    const firstName = parts[0];
+    const lastName = parts.slice(1).join(" ");
+    const formData = new FormData();
+    formData.append("related_team", "2");
+    formData.append("first_name", firstName);
+    formData.append("last_name", lastName || "");
+    formData.append("phone_number", values.phoneNumber);
+    formData.append("email", values.email);
+    formData.append("status", "initial-subscription");
+    formData.append("related_package", popUp.relatedPackage);
+    formData.append("related_package_price", popUp.relatedPackagePrice);
+    formData.append("country_code", popUp.region.toLowerCase());
+    formData.append("price", popUp.price);
+    formData.append("currency", popUp.region === "EG" ? "EGP" : "USD");
+    formData.append("duration", popUp.duration);
+    formData.append("duration_unit", "month");
+    formData.append("payment_option", "payment-gateway");
+    await createSubscriptionRequest(formData)
+      .then((response) => {
+        triggerAlert({
+          triggered: true,
+          type: "success",
+          message: "Subscription created successfully",
+        });
+      })
+      .catch((error) => {
+        console.log("error", error);
+        triggerAlert({
+          triggered: true,
+          type: "error",
+          message: "Error creating subscription",
+        });
+      })
+      .finally(() => {
+        resetForm();
+      }, []);
+  }, [popUp, values]);
 
   const [activeStep, setActiveStep] = useState(0);
 

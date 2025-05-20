@@ -1,5 +1,5 @@
 "use client";
-import React, { useActionState, useEffect, useState } from "react";
+import React, { useActionState, useCallback, useEffect, useState } from "react";
 // @Mui
 import {
   alpha,
@@ -18,45 +18,60 @@ import useLocales from "@/hooks/useLocales";
 import { useRecoilValue } from "recoil";
 // atoms
 import userIpRegionAtom from "@/recoil/atoms/userIpRegionAtom";
+import { packagesFetcher, pricesFetcher } from "@/__apis__/packages";
 
 // ------------------------------------------------------------
 
 function Plans() {
   const theme = useTheme();
 
-  const [selectedDuration, setSelectedDuration] = useState("1-month");
+  const [selectedDuration, setSelectedDuration] = useState(1);
 
   const { translate, currentLang } = useLocales();
 
   const userIpRegion = useRecoilValue(userIpRegionAtom);
 
-  const [ecoPrice, setEcoPrice] = useState("500");
-  const [silverPrice, setSilverPrice] = useState("800");
-  const [goldenPrice, setGoldenPrice] = useState("3500");
+  const [packagesData, setPackagesData] = useState([]);
+
+  const fetchPackages = useCallback(async () => {
+    await packagesFetcher()
+      .then((response) => {
+        setPackagesData(response);
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
+  }, []);
 
   useEffect(() => {
-    if (userIpRegion === "EG") {
-      if (selectedDuration === "1-month") {
-        setEcoPrice("500");
-        setSilverPrice("800");
-        setGoldenPrice("1200");
-      } else if (selectedDuration === "3-months") {
-        setEcoPrice("1250");
-        setSilverPrice("2000");
-        setGoldenPrice("3000");
+    fetchPackages();
+  }, []);
+
+  useEffect(() => {
+    const fetchPricesForAll = async () => {
+      try {
+        const updatedPackages = await Promise.all(
+          packagesData.map(async (pkg) => {
+            if (pkg.pricesData) return pkg;
+            try {
+              const priceData = await pricesFetcher(pkg.id);
+              return { ...pkg, pricesData: priceData };
+            } catch (e) {
+              console.error(`Failed to fetch price for package ${pkg.id}`, e);
+              return { ...pkg, pricesData: "" };
+            }
+          })
+        );
+        setPackagesData(updatedPackages);
+      } catch (error) {
+        console.log("General fetch error", error);
       }
-    } else if (userIpRegion !== "EG") {
-      if (selectedDuration === "1-month") {
-        setEcoPrice("25");
-        setSilverPrice("40");
-        setGoldenPrice("60");
-      } else if (selectedDuration === "3-months") {
-        setEcoPrice("60");
-        setSilverPrice("100");
-        setGoldenPrice("150");
-      }
+    };
+
+    if (packagesData.length > 0 && !packagesData[0]?.pricesData) {
+      fetchPricesForAll();
     }
-  }, [userIpRegion, selectedDuration]);
+  }, [packagesData]);
 
   return (
     <Box sx={{ py: 8 }}>
@@ -105,17 +120,13 @@ function Plans() {
                 <ButtonGroup>
                   <Button
                     size="large"
-                    onClick={() => setSelectedDuration("1-month")}
-                    variant={
-                      selectedDuration === "1-month" ? "contained" : "outlined"
-                    }
+                    onClick={() => setSelectedDuration(1)}
+                    variant={selectedDuration === 1 ? "contained" : "outlined"}
                     sx={{
                       transform:
                         currentLang.value === "ar"
                           ? "rotate(180deg)"
                           : "rotate(0deg)",
-                      // border: 1,
-                      // borderColor: "black",
                     }}
                   >
                     <span
@@ -134,17 +145,13 @@ function Plans() {
                   </Button>
                   <Button
                     size="large"
-                    onClick={() => setSelectedDuration("3-months")}
-                    variant={
-                      selectedDuration === "3-months" ? "contained" : "outlined"
-                    }
+                    onClick={() => setSelectedDuration(3)}
+                    variant={selectedDuration === 3 ? "contained" : "outlined"}
                     sx={{
                       transform:
                         currentLang.value === "ar"
                           ? "rotate(180deg)"
                           : "rotate(0deg)",
-                      // border: 1,
-                      // borderColor: "black",
                     }}
                   >
                     <span
@@ -167,146 +174,58 @@ function Plans() {
             <Grid item xs={12}>
               <Stack direction="row" mt={8} justifyContent="center">
                 <Grid container rowSpacing={6} columnSpacing={6}>
-                  <Grid item xs={12} md={4}>
-                    <PlanCard
-                      title={translate(
-                        "componentsTranslations.plans.plan1.title"
-                      )}
-                      description={translate(
-                        "componentsTranslations.plans.plan1.planDescription"
-                      )}
-                      featuresList={[
-                        translate(
-                          "componentsTranslations.plans.plan1.featuresList.1"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan1.featuresList.2"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan1.featuresList.3"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan1.featuresList.4"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan1.featuresList.5"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan1.featuresList.6"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan1.featuresList.7"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan1.featuresList.8"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan1.featuresList.9"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan1.featuresList.10"
-                        ),
-                      ]}
-                      price={ecoPrice}
-                      duration={selectedDuration}
-                      type="eco"
-                    />
-                  </Grid>
-                  <Grid item xs={12} md={4}>
-                    <PlanCard
-                      title={translate(
-                        "componentsTranslations.plans.plan2.title"
-                      )}
-                      description={translate(
-                        "componentsTranslations.plans.plan2.planDescription"
-                      )}
-                      featuresList={[
-                        translate(
-                          "componentsTranslations.plans.plan2.featuresList.1"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan2.featuresList.2"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan2.featuresList.3"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan2.featuresList.4"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan2.featuresList.5"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan2.featuresList.6"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan2.featuresList.7"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan2.featuresList.8"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan2.featuresList.9"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan2.featuresList.10"
-                        ),
-                      ]}
-                      price={silverPrice}
-                      isFeatured
-                      duration={selectedDuration}
-                      type="silver"
-                      hidden={true}
-                    />
-                  </Grid>
-                  {/* {selectedDuration === "3-months" && ( */}
-                  <Grid item xs={12} md={4}>
-                    <PlanCard
-                      title={translate(
-                        "componentsTranslations.plans.plan3.title"
-                      )}
-                      description={translate(
-                        "componentsTranslations.plans.plan3.planDescription"
-                      )}
-                      featuresList={[
-                        translate(
-                          "componentsTranslations.plans.plan3.featuresList.1"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan3.featuresList.2"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan3.featuresList.3"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan3.featuresList.4"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan3.featuresList.5"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan3.featuresList.6"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan3.featuresList.7"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan3.featuresList.8"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan3.featuresList.9"
-                        ),
-                        translate(
-                          "componentsTranslations.plans.plan3.featuresList.10"
-                        ),
-                      ]}
-                      price={goldenPrice}
-                      duration={selectedDuration}
-                      type="golden"
-                      // hidden={true}
-                    />
-                  </Grid>
-                  {/* )} */}
+                  {[...packagesData].reverse().map((item, index) => {
+                    const matchedPrice = item.pricesData?.find((priceObj) => {
+                      const countryCode = priceObj.country_code.toLowerCase();
+                      const duration = priceObj.related_duration_data?.duration;
+                      const id = priceObj?.id;
+
+                      if (userIpRegion === "EG") {
+                        return (
+                          countryCode === "eg" &&
+                          duration === selectedDuration &&
+                          id
+                        );
+                      } else {
+                        return (
+                          countryCode === "us" &&
+                          duration === selectedDuration &&
+                          id
+                        );
+                      }
+                    });
+
+                    return (
+                      <Grid item xs={12} md={4} key={index}>
+                        <PlanCard
+                          title={
+                            currentLang.value === "ar"
+                              ? item.secondary_lng_name
+                              : item.primary_lng_name
+                          }
+                          description={translate(
+                            `componentsTranslations.plans.${
+                              item.id === 175 ? "plan3" : "plan1"
+                            }.planDescription`
+                          )}
+                          featuresList={[...item.related_features_data]
+                            .reverse()
+                            .map((feature) =>
+                              currentLang.value === "ar"
+                                ? feature.secondary_description
+                                : feature.description
+                            )}
+                          price={matchedPrice ? matchedPrice.price : "N/A"}
+                          duration={selectedDuration}
+                          type={item.primary_lng_name}
+                          relatedPackage={item.id}
+                          relatedPackagePrice={
+                            matchedPrice ? matchedPrice.id : "N/A"
+                          }
+                        />
+                      </Grid>
+                    );
+                  })}
                 </Grid>
               </Stack>
             </Grid>
