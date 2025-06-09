@@ -115,7 +115,7 @@ function SelectPackagePopUp() {
     const formData = new FormData();
     formData.append("related_team", "2");
     formData.append("first_name", firstName);
-    formData.append("last_name", lastName || "");
+    formData.append("last_name", lastName || ".");
     formData.append("phone_number", values.phoneNumber);
     formData.append("email", values.email);
     formData.append("status", "initial-subscription");
