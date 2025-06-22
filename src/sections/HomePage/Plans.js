@@ -195,6 +195,14 @@ function Plans() {
                       }
                     });
 
+                    const features = [...item.related_features_data].reverse();
+
+                    if (item.primary_lng_name === "GOLDEN Plan") {
+                      const movedFeature = features[9];
+                      features.splice(9, 1); // Remove from index 9
+                      features.splice(5, 0, movedFeature); // Insert at index 5
+                    }
+
                     return (
                       <Grid item xs={12} md={4} key={index}>
                         <PlanCard
@@ -208,13 +216,11 @@ function Plans() {
                               item.id === 175 ? "plan3" : "plan1"
                             }.planDescription`
                           )}
-                          featuresList={[...item.related_features_data]
-                            .reverse()
-                            .map((feature) =>
-                              currentLang.value === "ar"
-                                ? feature.secondary_description
-                                : feature.description
-                            )}
+                          featuresList={features.map((feature) =>
+                            currentLang.value === "ar"
+                              ? feature.secondary_description
+                              : feature.description
+                          )}
                           price={matchedPrice ? matchedPrice.price : "N/A"}
                           duration={selectedDuration}
                           type={item.primary_lng_name}

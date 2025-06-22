@@ -11,8 +11,8 @@ import RecoiledTheme from "@/theme";
 //
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import SelectPackagePopUp from "@/components/SelectPackagePopUp";
 import Alert from "@/components/Alert";
+import SelectPackagePopUp from "@/components/SelectPackagePopUp";
 
 // -------------------------------------------------------------------------------------
 
