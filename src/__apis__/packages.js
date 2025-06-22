@@ -1,5 +1,6 @@
 import axiosInstance from "./axios";
 
+/*  */
 const mainUrl = "https://fitrithm-1535b180c063.herokuapp.com";
 
 export const packagesFetcher = async () =>
