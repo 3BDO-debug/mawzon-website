@@ -203,6 +203,15 @@ function Plans() {
                       features.splice(5, 0, movedFeature); // Insert at index 5
                     }
 
+                    const planKeyMap = {
+                      "GOLDEN Plan": "plan3",
+                      "ECO Plan": "plan1",
+                      "SILVER Plan": "plan2",
+                      "THERAPEUTIC Plan": "plan4",
+                    };
+
+                    const planKey = planKeyMap[item.primary_lng_name];
+
                     return (
                       <Grid item xs={12} md={4} key={index}>
                         <PlanCard
@@ -212,9 +221,9 @@ function Plans() {
                               : item.primary_lng_name
                           }
                           description={translate(
-                            `componentsTranslations.plans.${
-                              item.id === 175 ? "plan3" : "plan1"
-                            }.planDescription`
+                            planKey
+                              ? `componentsTranslations.plans.${planKey}.planDescription`
+                              : ""
                           )}
                           featuresList={features.map((feature) =>
                             currentLang.value === "ar"

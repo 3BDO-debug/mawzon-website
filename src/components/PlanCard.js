@@ -82,7 +82,7 @@ function PlanCard({
                 <Grid item xs={1.5}>
                   <Iconify
                     icon={
-                      (type !== "GOLDEN Plan" && index === 4) ||
+                      (type === "ECO Plan" && index === 4) ||
                       (type === "ECO Plan" && index === 8) ||
                       (type === "ECO Plan" && index === 2)
                         ? "ic:round-close"
@@ -92,7 +92,7 @@ function PlanCard({
                       width: 25,
                       height: 25,
                       color:
-                        (type !== "GOLDEN Plan" && index === 4) ||
+                        (type === "ECO Plan" && index === 4) ||
                         (type === "ECO Plan" && index === 8) ||
                         (type === "ECO Plan" && index === 2)
                           ? "red"

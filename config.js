@@ -11,7 +11,7 @@ export const cookiesKey = {
   themeMode: "themeMode",
   themeDirection: "themeDirection",
 };
-
+ 
 export const defaultSettings = {
   themeMode: "light",
   themeDirection: "ltr",

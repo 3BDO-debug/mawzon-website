@@ -56,6 +56,11 @@ const plans = {
       10: "Customer service available daily to assist you with any issues you encounter.",
     },
   },
+  plan4: {
+    title: "THERAPEUTIC Plan",
+    planDescription:
+      "A complete therapeutic program designed for you—to improve your health, ease your symptoms, and gently restore your body’s balance.",
+  },
   selectPLan: "Select Plan",
   thumbnail: "Discover the Perfect Package for Your Wellness Journey!",
 };
