@@ -62,7 +62,15 @@ function PlanCard({
       >
         <Stack gap={3}>
           <Box>
-            <Label color="primary">{title}</Label>
+            <Label sx={{ p: 1.5 }} color="secondary">
+              <Typography
+                variant="h6"
+                color="secondary.main"
+                sx={{ fontWeight: "bold" }}
+              >
+                {title}
+              </Typography>
+            </Label>
           </Box>
           <Box>
             <Typography variant="body2">{description}</Typography>
@@ -82,6 +90,8 @@ function PlanCard({
                 <Grid item xs={1.5}>
                   <Iconify
                     icon={
+                      (type === "THERAPEUTIC Plan" && index === 4) ||
+                      (type === "SILVER Plan" && index === 4) ||
                       (type === "ECO Plan" && index === 4) ||
                       (type === "ECO Plan" && index === 8) ||
                       (type === "ECO Plan" && index === 2)
@@ -92,6 +102,8 @@ function PlanCard({
                       width: 25,
                       height: 25,
                       color:
+                        (type === "THERAPEUTIC Plan" && index === 4) ||
+                        (type === "SILVER Plan" && index === 4) ||
                         (type === "ECO Plan" && index === 4) ||
                         (type === "ECO Plan" && index === 8) ||
                         (type === "ECO Plan" && index === 2)

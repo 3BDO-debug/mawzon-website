@@ -75,7 +75,7 @@ function Plans() {
 
   return (
     <Box sx={{ py: 8 }}>
-      <Container>
+      <Container maxWidth="xl">
         <Box sx={{ position: "relative" }}>
           {/* Gradient */}
           <Box
@@ -197,12 +197,6 @@ function Plans() {
 
                     const features = [...item.related_features_data].reverse();
 
-                    if (item.primary_lng_name === "GOLDEN Plan") {
-                      const movedFeature = features[9];
-                      features.splice(9, 1); // Remove from index 9
-                      features.splice(5, 0, movedFeature); // Insert at index 5
-                    }
-
                     const planKeyMap = {
                       "GOLDEN Plan": "plan3",
                       "ECO Plan": "plan1",
@@ -213,7 +207,7 @@ function Plans() {
                     const planKey = planKeyMap[item.primary_lng_name];
 
                     return (
-                      <Grid item xs={12} md={4} key={index}>
+                      <Grid item xs={12} md={3} key={index}>
                         <PlanCard
                           title={
                             currentLang.value === "ar"
