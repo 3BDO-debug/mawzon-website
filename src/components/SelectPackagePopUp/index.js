@@ -1,7 +1,7 @@
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
 // recoil
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 // Yup
 import * as Yup from "yup";
 // Formik
@@ -20,6 +20,7 @@ import {
   Stepper,
   Typography,
 } from "@mui/material";
+import { LoadingButton } from "@mui/lab";
 // __apis__
 import {
   createSubscriptionRequest,
@@ -30,13 +31,11 @@ import { useSetRecoilState } from "recoil";
 // atoms
 import alertAtom from "@/recoil/atoms/alertAtom";
 import { selectPackagePopUpAtom } from "@/recoil";
-import userIpRegionAtom from "@/recoil/atoms/userIpRegionAtom";
+// hooks
+import useLocales from "@/hooks/useLocales";
 // components
 import Iconify from "../Iconify";
 import GeneralInfo from "./GeneralInfo";
-import PaymentInfo from "./PaymentInfo";
-import { LoadingButton } from "@mui/lab";
-import useLocales from "@/hooks/useLocales";
 import PaymentOptions from "./PaymentOptions";
 
 // -------------------------------------------------------------------------------
@@ -85,7 +84,7 @@ function SelectPackagePopUp() {
           }
           setPopUp({ isTriggered: false });
           setActiveStep(0);
-          createSubscription();
+          // createSubscription();
         })
         .catch((error) => {
           console.log("rrr", error);
