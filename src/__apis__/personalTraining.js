@@ -11,7 +11,7 @@ export const personalTrainingRequester = async (requestData) =>
 export const createSubscriptionRequest = async (requestData) =>
   axiosInstance
     .post(
-      "https://fitrithm-1535b180c063.herokuapp.com/sales/subscriptions/create-subscription/",
+      "https://fitrithm-d86dd52d8dc9.herokuapp.com/sales/subscriptions/create-subscription/",
       requestData
     )
     .then((response) => response.data);
