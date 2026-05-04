@@ -1,5 +1,7 @@
 import axiosInstance from "./axios";
 
+/* ----------------- */
+
 export const personalTrainingRequester = async (requestData) =>
   axiosInstance
     .post(
