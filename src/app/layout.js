@@ -2,7 +2,7 @@
 // next
 import localFont from "next/font/local";
 // @Mui
-import { CssBaseline } from "@mui/material";
+import { CssBaseline, Fab, useMediaQuery, useTheme } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 // i18n
 import "@/locales/i18n";
@@ -13,6 +13,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Alert from "@/components/Alert";
 import SelectPackagePopUp from "@/components/SelectPackagePopUp";
+import Iconify from "@/components/Iconify";
 
 // -------------------------------------------------------------------------------------
 
@@ -35,6 +36,8 @@ const geistMono = localFont({
 // };
 
 export default function RootLayout({ children }) {
+  const theme = useTheme();
+  const isMdOrLarger = useMediaQuery(theme.breakpoints.up("md"));
   return (
     <html lang="en">
       <meta
@@ -85,6 +88,22 @@ export default function RootLayout({ children }) {
             {children}
             {/* Select Package Pop Up */}
             <SelectPackagePopUp />
+            <Fab
+              color="success"
+              aria-label="whatsapp"
+              onClick={() => window.open("https://wa.link/gwwdyx", "_blank")}
+              sx={{
+                position: "fixed",
+                bottom: isMdOrLarger ? 50 : 25,
+                right: isMdOrLarger ? 50 : 25,
+              }}
+            >
+              <Iconify
+                icon="logos:whatsapp-icon"
+                width={isMdOrLarger ? 30 : 30}
+                height={isMdOrLarger ? 30 : 30}
+              />
+            </Fab>
             <Alert />
             <Footer />
           </RecoiledTheme>

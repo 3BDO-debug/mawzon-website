@@ -29,7 +29,6 @@ import {
 import useLocales from "@/hooks/useLocales";
 import userIpRegionAtom from "@/recoil/atoms/userIpRegionAtom";
 import { userIpRegionFetcher } from "@/__apis__/userIpRegion";
-import Iconify from "@/components/Iconify";
 // -----------------------------------------------------------------
 
 const TransfomationsCard = ({
@@ -178,82 +177,82 @@ function HeroBanner() {
   const transformations = [
     {
       weigthBefore: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.1.before"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.1.before",
       ),
       weightAfter: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.1.after"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.1.after",
       ),
       before: "/transformations/zeinab-before.jpeg",
       after: "/transformations/zeinab-after.jpeg",
       story: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.1.story"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.1.story",
       ),
       name: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.1.name"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.1.name",
       ),
     },
     {
       weigthBefore: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.2.before"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.2.before",
       ),
       weightAfter: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.2.after"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.2.after",
       ),
       before: "/transformations/mawada-before.jpeg",
       after: "/transformations/mawada-after.jpeg",
       story: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.2.story"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.2.story",
       ),
       name: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.2.name"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.2.name",
       ),
     },
     {
       weigthBefore: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.3.before"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.3.before",
       ),
       weightAfter: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.3.after"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.3.after",
       ),
       before: "/transformations/basma-before.jpeg",
       after: "/transformations/basma-after.jpeg",
       story: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.3.story"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.3.story",
       ),
       name: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.3.name"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.3.name",
       ),
     },
     {
       weigthBefore: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.4.before"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.4.before",
       ),
       weightAfter: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.4.after"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.4.after",
       ),
       before: "/transformations/reham-before.jpeg",
       after: "/transformations/reham-after.jpeg",
       story: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.4.story"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.4.story",
       ),
       name: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.4.name"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.4.name",
       ),
     },
     {
       weigthBefore: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.5.before"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.5.before",
       ),
       weightAfter: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.5.after"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.5.after",
       ),
       before: "/transformations/nada-before.jpeg",
       after: "/transformations/nada-after.jpeg",
       story: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.5.story"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.5.story",
       ),
       name: translate(
-        "pagesTranslations.homePageTranslations.heroBanner.transformations.5.name"
+        "pagesTranslations.homePageTranslations.heroBanner.transformations.5.name",
       ),
     },
   ];
@@ -275,12 +274,12 @@ function HeroBanner() {
                 variant="h3"
               >
                 {translate(
-                  "pagesTranslations.homePageTranslations.heroBanner.title.text"
+                  "pagesTranslations.homePageTranslations.heroBanner.title.text",
                 )}
               </Typography>
               <Typography variant="h3">
                 {translate(
-                  "pagesTranslations.homePageTranslations.heroBanner.title.hook"
+                  "pagesTranslations.homePageTranslations.heroBanner.title.hook",
                 )}
                 <Typography
                   component="span"
@@ -301,7 +300,7 @@ function HeroBanner() {
                   variant="h3"
                 >
                   {translate(
-                    "pagesTranslations.homePageTranslations.heroBanner.title.hook2"
+                    "pagesTranslations.homePageTranslations.heroBanner.title.hook2",
                   )}
                 </Typography>
               </Typography>
@@ -327,7 +326,7 @@ function HeroBanner() {
           <Grid item xs={12} md={6} sx={{ mt: { xs: 0, md: -50 } }}>
             <Typography sx={{ mt: 1.5 }}>
               {translate(
-                "pagesTranslations.homePageTranslations.heroBanner.description"
+                "pagesTranslations.homePageTranslations.heroBanner.description",
               )}
             </Typography>
             <Box
@@ -341,11 +340,11 @@ function HeroBanner() {
               <Button
                 size="large"
                 variant="outlined"
-                onClick={() => push("/contact-us")}
+                onClick={() => window.open("https://wa.link/gwwdyx", "_blank")}
                 sx={{ color: "primary.main", borderColor: "primary.main" }}
               >
                 {translate(
-                  "pagesTranslations.homePageTranslations.heroBanner.actionButtons.contactUs"
+                  "pagesTranslations.homePageTranslations.heroBanner.actionButtons.contactUs",
                 )}
               </Button>
               <Button
@@ -354,7 +353,7 @@ function HeroBanner() {
                 onClick={() => push("/packages")}
               >
                 {translate(
-                  "pagesTranslations.homePageTranslations.heroBanner.actionButtons.viewPackages"
+                  "pagesTranslations.homePageTranslations.heroBanner.actionButtons.viewPackages",
                 )}
               </Button>
             </Box>

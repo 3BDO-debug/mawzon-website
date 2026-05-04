@@ -55,11 +55,16 @@ function ContactUsPage() {
                   autoPlay
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid
+                item
+                xs={12}
+                onClick={() => window.open("https://wa.link/gwwdyx", "_blank")}
+                sx={{ cursor: "pointer" }}
+              >
                 <ContactUsItem
                   icon="ic:round-whatsapp"
                   title={translate(
-                    "pagesTranslations.contactUsPageTranslations.whatsapp"
+                    "pagesTranslations.contactUsPageTranslations.whatsapp",
                   )}
                   value="+20 109-323-99-31"
                 />
@@ -68,7 +73,7 @@ function ContactUsPage() {
                 <ContactUsItem
                   icon="mage:email"
                   title={translate(
-                    "pagesTranslations.contactUsPageTranslations.email"
+                    "pagesTranslations.contactUsPageTranslations.email",
                   )}
                   value="support@mawzon.com"
                 />
@@ -77,7 +82,7 @@ function ContactUsPage() {
                 <ContactUsItem
                   icon="lets-icons:time"
                   title={translate(
-                    "pagesTranslations.contactUsPageTranslations.workingHours"
+                    "pagesTranslations.contactUsPageTranslations.workingHours",
                   )}
                   value="9:00 AM - 11:59 PM"
                 />
@@ -89,21 +94,21 @@ function ContactUsPage() {
               <Grid item xs={12}>
                 <Typography variant="overline">
                   {translate(
-                    "pagesTranslations.contactUsPageTranslations.contactUsForm.title"
+                    "pagesTranslations.contactUsPageTranslations.contactUsForm.title",
                   )}
                 </Typography>
               </Grid>
               <Grid item xs={12}>
                 <Typography variant="h2">
                   {translate(
-                    "pagesTranslations.contactUsPageTranslations.contactUsForm.subtitle"
+                    "pagesTranslations.contactUsPageTranslations.contactUsForm.subtitle",
                   )}
                 </Typography>
               </Grid>
               <Grid item xs={12}>
                 <Typography sx={{ mt: 3, mb: 6 }}>
                   {translate(
-                    "pagesTranslations.contactUsPageTranslations.contactUsForm.hook"
+                    "pagesTranslations.contactUsPageTranslations.contactUsForm.hook",
                   )}
                 </Typography>
               </Grid>
